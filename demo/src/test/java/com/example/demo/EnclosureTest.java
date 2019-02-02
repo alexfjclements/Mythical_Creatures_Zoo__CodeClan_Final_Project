@@ -11,13 +11,15 @@ import static org.junit.Assert.assertEquals;
 public class EnclosureTest {
 
     private MythicalCreature harpy;
+    private MythicalCreature dragon;
     private IEatCarnivore eatBehaviour;
     private Enclosure enclosure;
     private OriginLocation originLocation;
 
     @Before
     public void before() {
-        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek);
+        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "");
+        dragon = new MythicalCreature("bob", Gender.Female, eatBehaviour, OriginLocation.Chinese, "");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
     }
 
@@ -36,6 +38,12 @@ public class EnclosureTest {
     public void canRemoveCreature(){
         enclosure.addCreature(harpy);
         enclosure.removeCreature(harpy);
+        assertEquals(0, enclosure.getCreatures().size());
+     }
+
+     @Test
+    public void onlyAddCreatureIfCorrectLocation(){
+        enclosure.addCreature(dragon);
         assertEquals(0, enclosure.getCreatures().size());
      }
 

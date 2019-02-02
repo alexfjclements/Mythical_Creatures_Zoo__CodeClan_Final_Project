@@ -24,10 +24,6 @@ public class Enclosure {
         return creatures;
     }
 
-    public void setCreatures(ArrayList<MythicalCreature> creatures) {
-        this.creatures = creatures;
-    }
-
     public int getSize() {
         return size;
     }
@@ -53,7 +49,9 @@ public class Enclosure {
     }
 
     public void addCreature(MythicalCreature creature) {
-        this.creatures.add(creature);
+        if (creature.getOriginLocation() == type) {
+            this.creatures.add(creature);
+        }
     }
 
     public void removeCreature(MythicalCreature creature) {
