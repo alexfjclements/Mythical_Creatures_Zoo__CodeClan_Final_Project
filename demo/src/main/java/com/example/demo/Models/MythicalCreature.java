@@ -68,4 +68,9 @@ public class MythicalCreature {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String eat(){
+        String eatString = eatBehaviour.eat();
+        return eatString;
+    }
 }

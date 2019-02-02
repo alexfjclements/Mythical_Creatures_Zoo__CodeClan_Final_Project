@@ -23,4 +23,9 @@ public class MythicalCreatureTest {
     public void hasName() {
         assertEquals("Harpy", harpy.getName());
     }
+
+    @Test
+    public void canEat(){
+        assertEquals("I eat other animals", harpy.eat());
+    }
 }
