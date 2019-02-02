@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 
-class Logo extends Component{
+class FAQ extends Component{
    render(){
       return(
-         "This is the logo!"
+         "This is FAQ!"
       )
    }
 
-
 }
 
-export default Logo;
+export default FAQ;
