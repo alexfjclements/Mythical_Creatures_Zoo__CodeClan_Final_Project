@@ -1,6 +1,5 @@
-import com.example.demo.IEat.IEatCarnivore;
+import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.*;
-import com.example.demo.IEat.IEatCarnivore;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -11,7 +10,7 @@ public class MenagerieTest {
 
     private MythicalCreature harpy;
     private MythicalCreature dragon;
-    private IEatCarnivore eatBehaviour;
+    private IKillEat eatBehaviour;
     private Menagerie menagerie;
     private Enclosure enclosure;
     private Visitor visitor;
