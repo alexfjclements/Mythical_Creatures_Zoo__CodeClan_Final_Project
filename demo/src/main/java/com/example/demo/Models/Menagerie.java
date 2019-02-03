@@ -1,12 +1,31 @@
 package com.example.demo.Models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 
-
+@Entity
+@Table(name = "menageries")
 public class Menagerie {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @JsonIgnore
+    @OneToMany
+    @JoinColumn(name = "enclosures_id", nullable = false)
     private ArrayList<Enclosure> enclosures;
+
+    @JsonIgnore
+    @OneToMany
+    @JoinColumn(name = "visitors_id", nullable = false)
     private ArrayList<Visitor> visitors;
+
+    @Column(name = "entrance")
     private double entranceFee;
 
     public Menagerie(String name, double entranceFee) {

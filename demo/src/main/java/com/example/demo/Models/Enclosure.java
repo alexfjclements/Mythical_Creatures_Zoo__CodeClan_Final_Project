@@ -1,15 +1,29 @@
 package com.example.demo.Models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 
+@Entity
+@Table(name = "enclosures")
 public class Enclosure {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
+    @OneToMany
+    @JoinColumn(name = "mythical_creature_id", nullable = false)
     private ArrayList<MythicalCreature> creatures;
 
+    @Column(name = "size")
     private int size;
 
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "type")
     private OriginLocation type;
 
     public Enclosure(int size, String name, OriginLocation type) {
