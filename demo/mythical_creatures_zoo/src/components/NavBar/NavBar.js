@@ -1,20 +1,31 @@
-import React, {Component, Fragment} from 'react';
+import React, { Component, Fragment } from 'react';
 import Logo from './Logo.js';
 import CreaturesButton from './CreaturesButton.js'
 import RegionsDropDown from './RegionsDropDown.js'
-import SearchBox from './SearchBox.js'
+import SearchBox from './SearchBox.js';
+import './NavBar.css';
 
 
-class NavBar extends Component{
+class NavBar extends Component {
 
-   render(){
-      return(
-         <Fragment>
-         <Logo/>
-         <CreaturesButton/>
-         <RegionsDropDown/>
-         <SearchBox/>
-         </Fragment>
+   render() {
+      return (
+         <div className="navbar">
+            <div className="child">
+               <Logo />
+            </div>
+            <div className="child">
+               <CreaturesButton />
+            </div>
+
+            <div className="child">
+               <RegionsDropDown />
+            </div>
+
+            <div className="child">
+               <SearchBox />
+            </div >
+         </div >
       )
    }
 }
