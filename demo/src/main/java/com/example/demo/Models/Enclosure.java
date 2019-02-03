@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "enclosures")
@@ -15,7 +16,7 @@ public class Enclosure {
     @JsonIgnore
     @OneToMany
     @JoinColumn(name = "mythical_creature_id", nullable = false)
-    private ArrayList<MythicalCreature> creatures;
+    private List<MythicalCreature> creatures;
 
     @Column(name = "size")
     private int size;
@@ -26,11 +27,16 @@ public class Enclosure {
     @Column(name = "type")
     private OriginLocation type;
 
+    @ManyToOne
+    @JoinColumn(name = "menagerie_id", nullable = false)
+    private Menagerie menagerie;
+
     public Enclosure(int size, String name, OriginLocation type) {
         this.creatures = new ArrayList<>();
         this.size = size;
         this.name = name;
         this.type = type;
+        this.menagerie = null;
     }
 
     public Long getId() {
@@ -44,7 +50,7 @@ public class Enclosure {
     public Enclosure() {
     }
 
-    public ArrayList<MythicalCreature> getCreatures() {
+    public List<MythicalCreature> getCreatures() {
         return creatures;
     }
 
@@ -87,7 +93,18 @@ public class Enclosure {
         return eatString;
     }
 
-    public void setCreatures(ArrayList<MythicalCreature> creatures) {
+    public Menagerie getMenagerie() {
+        return menagerie;
+    }
+
+    public void setMenagerie(Menagerie menagerie) {
+        this.menagerie = menagerie;
+    }
+
+    public void setCreatures(List<MythicalCreature> creatures) {
         this.creatures = creatures;
     }
 }
+
+
+

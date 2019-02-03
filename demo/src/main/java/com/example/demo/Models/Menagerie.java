@@ -3,6 +3,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "menageries")
@@ -17,13 +18,13 @@ public class Menagerie {
 
     @JsonIgnore
     @OneToMany
-    @JoinColumn(name = "enclosures_id", nullable = false)
-    private ArrayList<Enclosure> enclosures;
+    @JoinColumn(name = "enclosure_id", nullable = false)
+    private List<Enclosure> enclosures;
 
     @JsonIgnore
     @OneToMany
-    @JoinColumn(name = "visitors_id", nullable = false)
-    private ArrayList<Visitor> visitors;
+    @JoinColumn(name = "visitor_id", nullable = false)
+    private List<Visitor> visitors;
 
     @Column(name = "entrance")
     private double entranceFee;
@@ -54,12 +55,12 @@ public class Menagerie {
         this.name = name;
     }
 
-    public ArrayList<Enclosure> getEnclosures() {
+    public List<Enclosure> getEnclosures() {
         return enclosures;
     }
 
 
-    public ArrayList<Visitor> getVisitors() {
+    public List<Visitor> getVisitors() {
         return visitors;
     }
 
@@ -86,11 +87,11 @@ public class Menagerie {
         visitors.remove(visitor);
     }
 
-    public void setEnclosures(ArrayList<Enclosure> enclosures) {
+    public void setEnclosures(List<Enclosure> enclosures) {
         this.enclosures = enclosures;
     }
 
-    public void setVisitors(ArrayList<Visitor> visitors) {
+    public void setVisitors(List<Visitor> visitors) {
         this.visitors = visitors;
     }
 }

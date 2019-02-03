@@ -1,7 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.IKill.IKill;
-import com.example.demo.repositories.MythicalCreaturesRepo;
+import com.example.demo.repositories.MythicalCreaturesRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class DemoApplicationTests {
 
 	@Autowired
-	MythicalCreaturesRepo mythicalCreaturesRepo;
+	MythicalCreaturesRepository mythicalCreaturesRepository;
 
 	@Test
 	public void contextLoads() {
@@ -21,7 +20,6 @@ public class DemoApplicationTests {
 
 	@Test
 	public void saveCreature(){
-
 	}
 
 }

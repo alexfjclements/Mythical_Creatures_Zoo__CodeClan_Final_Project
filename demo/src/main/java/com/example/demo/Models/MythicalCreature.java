@@ -27,12 +27,17 @@ public class MythicalCreature {
     @Column(name = "description")
     private String description;
 
+    @ManyToOne
+    @JoinColumn(name = "enclosure_id", nullable = false)
+    private Enclosure enclosure;
+
     public MythicalCreature(String name, Gender gender, IKill killBehaviour, OriginLocation originLocation, String description) {
         this.name = name;
         this.gender = gender;
         this.killBehaviour = killBehaviour;
         this.originLocation = originLocation;
         this.description = description;
+        this.enclosure = null;
     }
 
     public MythicalCreature(){}
@@ -96,5 +101,13 @@ public class MythicalCreature {
 
     public void setKillBehaviour(IKill killBehaviour) {
         this.killBehaviour = killBehaviour;
+    }
+
+    public Enclosure getEnclosure() {
+        return enclosure;
+    }
+
+    public void setEnclosure(Enclosure enclosure) {
+        this.enclosure = enclosure;
     }
 }
