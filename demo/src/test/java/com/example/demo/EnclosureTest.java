@@ -1,3 +1,4 @@
+import com.example.demo.IKill.IKill;
 import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.Enclosure;
 import com.example.demo.Models.MythicalCreature;
@@ -12,7 +13,7 @@ public class EnclosureTest {
 
     private MythicalCreature harpy;
     private MythicalCreature dragon;
-    private IKillEat eatBehaviour;
+    private IKill eatBehaviour;
     private Enclosure enclosure;
     private OriginLocation originLocation;
 

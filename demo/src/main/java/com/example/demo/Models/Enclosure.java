@@ -2,6 +2,8 @@ package com.example.demo.Models;
 import java.util.ArrayList;
 
 public class Enclosure {
+    private Long id;
+
     private ArrayList<MythicalCreature> creatures;
 
     private int size;
@@ -15,6 +17,14 @@ public class Enclosure {
         this.size = size;
         this.name = name;
         this.type = type;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Enclosure() {
@@ -61,5 +71,9 @@ public class Enclosure {
     public String feedCreature(MythicalCreature creature){
         String eatString = creature.eat();
         return eatString;
+    }
+
+    public void setCreatures(ArrayList<MythicalCreature> creatures) {
+        this.creatures = creatures;
     }
 }

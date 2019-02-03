@@ -2,16 +2,32 @@ package com.example.demo.Models;
 
 import com.example.demo.IKill.IKill;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "mythical_creatures")
 public class MythicalCreature {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
-    private Enum gender;
+
+    @Column(name = "gender")
+    private Gender gender;
+
+    @Column(name = "kill_behaviour")
     private IKill killBehaviour;
-    private Enum originLocation;
+
+    @Column(name = "originLocation")
+    private OriginLocation originLocation;
+
+    @Column(name = "description")
     private String description;
 
-    public MythicalCreature(String name, Enum gender, IKill killBehaviour, Enum originLocation, String description) {
-        this.id = id;
+    public MythicalCreature(String name, Gender gender, IKill killBehaviour, OriginLocation originLocation, String description) {
         this.name = name;
         this.gender = gender;
         this.killBehaviour = killBehaviour;
@@ -19,7 +35,7 @@ public class MythicalCreature {
         this.description = description;
     }
 
-    public MythicalCreature(){};
+    public MythicalCreature(){}
 
     public Long getId() {
         return id;
@@ -41,7 +57,7 @@ public class MythicalCreature {
         return gender;
     }
 
-    public void setGender(Enum gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
@@ -57,7 +73,7 @@ public class MythicalCreature {
         return originLocation;
     }
 
-    public void setOriginLocation(Enum originLocation) {
+    public void setOriginLocation(OriginLocation originLocation) {
         this.originLocation = originLocation;
     }
 
@@ -72,5 +88,13 @@ public class MythicalCreature {
     public String eat(){
         String eatString = killBehaviour.kill();
         return eatString;
+    }
+
+    public IKill getKillBehaviour() {
+        return killBehaviour;
+    }
+
+    public void setKillBehaviour(IKill killBehaviour) {
+        this.killBehaviour = killBehaviour;
     }
 }

@@ -1,3 +1,4 @@
+import com.example.demo.IKill.IKill;
 import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.MythicalCreature;
 import com.example.demo.Models.Gender;
@@ -11,11 +12,12 @@ import static org.junit.Assert.assertEquals;
 public class MythicalCreatureTest {
 
     private MythicalCreature harpy;
-    private IKillEat eatBehaviour;
+    private IKill killBehaviour;
 
     @Before
     public void before() {
-        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "");
+        killBehaviour = new IKillEat();
+        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "");
     }
 
     @Test
@@ -25,6 +27,6 @@ public class MythicalCreatureTest {
 
     @Test
     public void canEat(){
-        assertEquals("I eat other animals", harpy.eat());
+        assertEquals("I eat humans, yum yum", harpy.eat());
     }
 }

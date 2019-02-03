@@ -1,7 +1,9 @@
 package com.example.demo.Models;
 import java.util.ArrayList;
 
+
 public class Menagerie {
+    private Long id;
     private String name;
     private ArrayList<Enclosure> enclosures;
     private ArrayList<Visitor> visitors;
@@ -15,6 +17,14 @@ public class Menagerie {
     }
 
     public Menagerie() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -55,5 +65,13 @@ public class Menagerie {
 
     public void removeVisitor(Visitor visitor){
         visitors.remove(visitor);
+    }
+
+    public void setEnclosures(ArrayList<Enclosure> enclosures) {
+        this.enclosures = enclosures;
+    }
+
+    public void setVisitors(ArrayList<Visitor> visitors) {
+        this.visitors = visitors;
     }
 }

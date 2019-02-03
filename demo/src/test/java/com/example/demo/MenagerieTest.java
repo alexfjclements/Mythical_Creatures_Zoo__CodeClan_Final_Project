@@ -1,3 +1,4 @@
+import com.example.demo.IKill.IKill;
 import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.*;
 
@@ -10,15 +11,16 @@ public class MenagerieTest {
 
     private MythicalCreature harpy;
     private MythicalCreature dragon;
-    private IKillEat eatBehaviour;
+    private IKill killBehaviour;
     private Menagerie menagerie;
     private Enclosure enclosure;
     private Visitor visitor;
 
     @Before
     public void before() {
-        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "");
-        dragon = new MythicalCreature("bob", Gender.Female, eatBehaviour, OriginLocation.Chinese, "");
+        killBehaviour = new IKillEat();
+        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "");
+        dragon = new MythicalCreature("bob", Gender.Female, killBehaviour, OriginLocation.Chinese, "");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
         menagerie = new Menagerie("Name", 10);
         visitor = new Visitor(10);
