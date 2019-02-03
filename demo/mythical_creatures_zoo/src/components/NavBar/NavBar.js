@@ -11,7 +11,7 @@ class NavBar extends Component {
    render() {
       return (
          <div className="navbar">
-<<<<<<< HEAD
+
             <div className="child">
                <Logo />
             </div>
@@ -27,13 +27,8 @@ class NavBar extends Component {
                <SearchBox />
             </div >
          </div >
-=======
-            <Logo className="logo"/>
-            <CreaturesButton />
-            <RegionsDropDown />
-            <SearchBox />
-         </div>
->>>>>>> 60254cc52bf191b9a440eb50f3fc92ce8d0f2e01
+
+      
       )
    }
 }
