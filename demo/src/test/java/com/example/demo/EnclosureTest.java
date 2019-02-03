@@ -1,4 +1,4 @@
-import com.example.demo.IEat.IEatCarnivore;
+import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.Enclosure;
 import com.example.demo.Models.MythicalCreature;
 import com.example.demo.Models.Gender;
@@ -12,13 +12,13 @@ public class EnclosureTest {
 
     private MythicalCreature harpy;
     private MythicalCreature dragon;
-    private IEatCarnivore eatBehaviour;
+    private IKillEat eatBehaviour;
     private Enclosure enclosure;
     private OriginLocation originLocation;
 
     @Before
     public void before() {
-        eatBehaviour = new IEatCarnivore();
+        eatBehaviour = new IKillEat();
         harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "");
         dragon = new MythicalCreature("bob", Gender.Female, eatBehaviour, OriginLocation.Chinese, "");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);

@@ -1,20 +1,20 @@
 package com.example.demo.Models;
 
-import com.example.demo.IEat.IEat;
+import com.example.demo.IKill.IKill;
 
 public class MythicalCreature {
     private Long id;
     private String name;
     private Enum gender;
-    private IEat eatBehaviour;
+    private IKill killBehaviour;
     private Enum originLocation;
     private String description;
 
-    public MythicalCreature(String name, Enum gender, IEat eatBehaviour, Enum originLocation, String description) {
+    public MythicalCreature(String name, Enum gender, IKill killBehaviour, Enum originLocation, String description) {
         this.id = id;
         this.name = name;
         this.gender = gender;
-        this.eatBehaviour = eatBehaviour;
+        this.killBehaviour = killBehaviour;
         this.originLocation = originLocation;
         this.description = description;
     }
@@ -45,12 +45,12 @@ public class MythicalCreature {
         this.gender = gender;
     }
 
-    public IEat getEatBehaviour() {
-        return eatBehaviour;
+    public IKill getEatBehaviour() {
+        return killBehaviour;
     }
 
-    public void setEatBehaviour(IEat eatBehaviour) {
-        this.eatBehaviour = eatBehaviour;
+    public void setEatBehaviour(IKill eatBehaviour) {
+        this.killBehaviour = eatBehaviour;
     }
 
     public Enum getOriginLocation() {
@@ -70,7 +70,7 @@ public class MythicalCreature {
     }
 
     public String eat(){
-        String eatString = eatBehaviour.eat();
+        String eatString = killBehaviour.kill();
         return eatString;
     }
 }
