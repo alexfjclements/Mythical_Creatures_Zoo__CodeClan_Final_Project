@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Logo from './Logo.js';
-import CreaturesButton from './CreaturesButton.js'
+import ExploreButton from './ExploreButton.js'
 import RegionsDropDown from './RegionsDropDown.js'
 import SearchBox from './SearchBox.js';
 import './NavBar.css';
@@ -16,8 +16,9 @@ class NavBar extends Component {
             <div className="child">
                <Link to ="/"><Logo/></Link>
             </div>
+
             <div className="child">
-               <CreaturesButton />
+               <ExploreButton />
             </div>
 
             <div className="child">

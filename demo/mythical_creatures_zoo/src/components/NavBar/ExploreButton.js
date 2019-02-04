@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './NavBar.css';
 
-class CreaturesButton extends Component{
+class ExploreButton extends Component{
    render(){
       return(
-         "This is the button!"
+         "Explore"
       )
    }
 }
 
-export default CreaturesButton;
+export default ExploreButton;
