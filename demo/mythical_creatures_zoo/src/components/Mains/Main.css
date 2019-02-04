@@ -1,4 +1,9 @@
 .main {
-   background-color: grey;
    height: 500px;
+   background-color: grey;
+
+
 }
+
+/* Setting the height pushes the font down the page. How do we change the
+background without moving the font? */
