@@ -35,22 +35,28 @@ class Footer extends Component {
          // </li>
          // </ul>
          <div className="footer">
-         
-         <div className="child">
-         <SocialMedia/>
-         </div>
 
-         <div className="child">
-         <Link to="/FAQMain">FAQ</Link>
-         </div>
+            <div className="child">
+               <SocialMedia />
+            </div>
 
-         <div className="child">
-         <Link to="/OurHistory">Our History</Link>
-         </div>
+            <div className="child">
+               <Link to="/FAQ">
+                  FAQ
+               </Link>
+            </div>
 
-         <div className="child">
-         <Link to="/UsefulLinks">Useful Links</Link>
-         </div>
+            <div className="child">
+               <Link to="/OurHistory">
+                  Our History
+               </Link>
+            </div>
+
+            <div className="child">
+               <Link to="/UsefulLinks">
+                  Useful Links
+               </Link>
+            </div>
 
          </div>
       );

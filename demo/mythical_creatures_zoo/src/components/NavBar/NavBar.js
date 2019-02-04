@@ -14,20 +14,29 @@ class NavBar extends Component {
          <div className="navbar">
 
             <div className="child">
-               <Link to ="/"><Logo/></Link>
+               <Link to ="/">
+               <Logo/>
+               </Link>
             </div>
 
             <div className="child">
+               <Link to="/Explore">
                <ExploreButton />
+               </Link>
             </div>
 
             <div className="child">
+               <Link to="/Region">
                <RegionsDropDown />
+               </Link>
             </div>
 
             <div className="child">
+               <Link to="/Search">
                <SearchBox />
+               </Link>
             </div >
+
          </div >
 
 

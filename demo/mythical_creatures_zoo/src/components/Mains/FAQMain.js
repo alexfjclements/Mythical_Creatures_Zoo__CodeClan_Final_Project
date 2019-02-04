@@ -3,7 +3,10 @@ import React, {Component} from 'react';
 class FAQMain extends Component {
    render(){
       return(
-         "This is the FAQ page"
+         <>
+         "Q1: When is too early for whisky?"
+         "A: Never"
+         </>
       )
    }
 }
