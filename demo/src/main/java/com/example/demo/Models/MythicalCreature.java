@@ -1,5 +1,6 @@
 package com.example.demo.Models;
 
+import com.example.demo.IKill.IDontKill;
 import com.example.demo.IKill.IKill;
 
 import javax.persistence.*;
@@ -103,8 +104,8 @@ public class MythicalCreature {
     }
 
     public String eatHuman(){
-        String eatString = killBehaviour.kill();
-        return eatString;
+        String eatHuman = killBehaviour.kill();
+        return eatHuman;
     }
 
     public IKill getKillBehaviour() {
@@ -121,5 +122,10 @@ public class MythicalCreature {
 
     public void setEnclosure(Enclosure enclosure) {
         this.enclosure = enclosure;
+    }
+
+    public String eatPlants() {
+        String eatPlants = killBehaviour.kill();
+        return eatPlants;
     }
 }

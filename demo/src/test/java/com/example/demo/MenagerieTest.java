@@ -1,3 +1,5 @@
+package com.example.demo;
+
 import com.example.demo.IKill.IKill;
 import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.*;
