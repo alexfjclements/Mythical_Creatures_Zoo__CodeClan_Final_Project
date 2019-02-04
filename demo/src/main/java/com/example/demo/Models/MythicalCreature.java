@@ -1,6 +1,5 @@
 package com.example.demo.Models;
 
-import com.example.demo.IKill.IDontKill;
 import com.example.demo.IKill.IKill;
 import com.example.demo.IKill.IKillFactory;
 
@@ -22,8 +21,6 @@ public class MythicalCreature {
 
     @Column(name = "killBehaviour")
     private String killBehaviourString;
-
-//    private IKillFactory iKillFactory;
 
     @Column(name = "originLocation")
     private OriginLocation originLocation;
