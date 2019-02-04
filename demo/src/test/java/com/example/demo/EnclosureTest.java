@@ -22,8 +22,8 @@ public class EnclosureTest {
     @Before
     public void before() {
         eatBehaviour = new IKillEat();
-        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "", "Harpy");
-        dragon = new MythicalCreature("bob", Gender.Female, eatBehaviour, OriginLocation.Chinese, "", "Dragon");
+        harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", OriginLocation.Greek, "", "Harpy");
+        dragon = new MythicalCreature("bob", Gender.Female, "IKillEat", OriginLocation.Chinese, "", "Dragon");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
     }
 

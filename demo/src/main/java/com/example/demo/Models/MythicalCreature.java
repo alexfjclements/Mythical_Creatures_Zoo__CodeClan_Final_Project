@@ -2,6 +2,7 @@ package com.example.demo.Models;
 
 import com.example.demo.IKill.IDontKill;
 import com.example.demo.IKill.IKill;
+import com.example.demo.IKill.IKillFactory;
 
 import javax.persistence.*;
 
@@ -19,8 +20,10 @@ public class MythicalCreature {
     @Column(name = "gender")
     private Gender gender;
 
-    @Column(name = "kill_behaviour")
-    private IKill killBehaviour;
+    @Column(name = "killBehaviour")
+    private String killBehaviourString;
+
+//    private IKillFactory iKillFactory;
 
     @Column(name = "originLocation")
     private OriginLocation originLocation;
@@ -35,10 +38,10 @@ public class MythicalCreature {
     @Column(name = "breed")
     private String breed;
 
-    public MythicalCreature(String name, Gender gender, IKill killBehaviour, OriginLocation originLocation, String description, String breed) {
+    public MythicalCreature(String name, Gender gender, String killBehaviourString, OriginLocation originLocation, String description, String breed) {
         this.name = name;
         this.gender = gender;
-        this.killBehaviour = killBehaviour;
+        this.killBehaviourString = killBehaviourString;
         this.originLocation = originLocation;
         this.description = description;
         this.enclosure = null;
@@ -71,13 +74,15 @@ public class MythicalCreature {
         this.gender = gender;
     }
 
-    public IKill getEatBehaviour() {
-        return killBehaviour;
+    public String getKillBehaviourString() {
+        return killBehaviourString;
     }
 
-    public void setEatBehaviour(IKill eatBehaviour) {
-        this.killBehaviour = eatBehaviour;
+    public void setKillBehaviourString(String killBehaviourString) {
+        this.killBehaviourString = killBehaviourString;
     }
+
+
 
     public Enum getOriginLocation() {
         return originLocation;
@@ -103,17 +108,11 @@ public class MythicalCreature {
         this.breed = breed;
     }
 
-    public String eatHuman(){
+    public String eat(){
+        IKillFactory iKillFactory = new IKillFactory();
+        IKill killBehaviour = iKillFactory.getKillBehaviour(this.killBehaviourString);
         String eatHuman = killBehaviour.kill();
         return eatHuman;
-    }
-
-    public IKill getKillBehaviour() {
-        return killBehaviour;
-    }
-
-    public void setKillBehaviour(IKill killBehaviour) {
-        this.killBehaviour = killBehaviour;
     }
 
     public Enclosure getEnclosure() {
@@ -124,8 +123,4 @@ public class MythicalCreature {
         this.enclosure = enclosure;
     }
 
-    public String eatPlants() {
-        String eatPlants = killBehaviour.kill();
-        return eatPlants;
-    }
 }

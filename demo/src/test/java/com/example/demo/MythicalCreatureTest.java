@@ -16,15 +16,11 @@ public class MythicalCreatureTest {
 
     private MythicalCreature harpy;
     private MythicalCreature unicorn;
-    private IKill killBehaviour;
-    private IDontKill eatBehaviour;
 
     @Before
     public void before() {
-        killBehaviour = new IKillEat();
-        eatBehaviour = new IDontKill();
-        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "", "Harpy");
-        unicorn = new MythicalCreature("Melvin", Gender.Female, eatBehaviour, OriginLocation.Greek, "", "Unicorn");
+        harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", OriginLocation.Greek, "", "Harpy");
+        unicorn = new MythicalCreature("Melvin", Gender.Female, "IDontKill", OriginLocation.Greek, "", "Unicorn");
     }
 
     @Test
@@ -34,11 +30,11 @@ public class MythicalCreatureTest {
 
     @Test
     public void canEatHuman(){
-        assertEquals("I eat humans, yum yum", harpy.eatHuman());
+        assertEquals("I eat humans, yum yum", harpy.eat());
     }
 
     @Test
     public void canEatPlants(){
-        assertEquals("I eat plants", unicorn.eatPlants());
+        assertEquals("I eat plants", unicorn.eat());
     }
 }

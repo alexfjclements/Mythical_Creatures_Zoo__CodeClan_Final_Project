@@ -89,7 +89,7 @@ public class Enclosure {
     }
 
     public String feedCreatureHuman(MythicalCreature creature){
-        String eatString = creature.eatHuman();
+        String eatString = creature.eat();
         return eatString;
     }
 
