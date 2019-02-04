@@ -1,13 +1,16 @@
 import React, {Component} from 'react';
 import CreatureDetail from './CreatureDetail.js';
 
-const CreatureList = ({banana, pinapple}) => {
+const CreatureList = ({creatures = []}) => {
 
-     //  const listCreatures = banana.map((creature, index) => {
-     //   return <li key={index}>{creature.name}</li>
-     // });
+      const listCreatures = creatures.map((creature, index) => {
+       return <li key={index}>{creature.name}</li>
+     });
       return(
-         <h4>Creatures! {banana}</h4>
+         <div>
+         <h4>Creatures!</h4>
+         <p>{listCreatures}</p>
+         </div>
       )
    };
 
