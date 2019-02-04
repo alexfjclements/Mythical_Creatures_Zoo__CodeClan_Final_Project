@@ -12,13 +12,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping(value="/")
+@RequestMapping(value = "/mythical-creatures")
 public class MythicalCreatureController {
 
     @Autowired
     MythicalCreaturesRepository mythicalCreaturesRepository;
 
-    @GetMapping(value="/")
+    @GetMapping
     public List<MythicalCreature> getAllMythicalCreatures(){
         return mythicalCreaturesRepository.findAll();
     }
