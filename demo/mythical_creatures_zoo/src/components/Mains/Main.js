@@ -11,34 +11,7 @@ class Main extends Component {
    render() {
       return (
          ""
-         // <div className="main">
-
-
-         // <div className="child">
-         //    <Link to="/Explore">
-         //       Explore
-         //    </Link>
-         // </div>
-
-         // <div className="child">
-         //    <Link to="/OurCreatures">
-         //       Our Creatures
-         //    </Link>
-         // </div>
-
-         // <div className="child">
-         //    <Link to="/Regions">
-         //       Regions
-         //    </Link>
-         // </div>
-
-         // <div className="child">
-         //    <Link to="/Search">
-         //       Search
-         //    </Link>
-         // </div>
-
-      // </div>
+         
         
       );
    }

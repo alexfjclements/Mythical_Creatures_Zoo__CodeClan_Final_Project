@@ -65,7 +65,9 @@ class ZooContainer extends Component {
             <br></br>
             <br></br>
             <Main />
-            <Route path="/Explore" component={EnclosureList}/>
+            {/* <Route path="/Explore" component={EnclosureList}/> */}
+            <Route path="/Explore" render={() => <CreatureList creatures={this.state.creaturesArray}/>}
+            />
             <Route path="/Region" component={RegionsDropDown}/>
             <Route path="/Search" component={SearchBox}/>
             <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray}/>}

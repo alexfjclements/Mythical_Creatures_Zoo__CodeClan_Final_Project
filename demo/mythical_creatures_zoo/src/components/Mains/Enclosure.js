@@ -1,12 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import CreatureList from './CreatureList.js';
 
-class Enclosure extends Component{
-   render(){
-      return(
-         <CreatureList />
-      )
-   }
+const Enclosure = (enclosure) => {
+   // <>
+      {/* <p>EnclosureNumber: {creature.enclosure}</p> */}
+      // <CreatureList />
+   // </>
 }
+
 
 export default Enclosure;

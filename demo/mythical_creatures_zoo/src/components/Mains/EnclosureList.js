@@ -1,12 +1,17 @@
 import React, {Component} from 'react';
 import Enclosure from './Enclosure.js';
 
-class EnclosureList extends Component{
-   render(){
-      return(
-         <Enclosure />
-      )
-   }
+const EnclosureList = ({creatures = []})=>{
+   const listEnclosures = creatures.map((creature, index) => {
+      return (
+         <li key={index} className="enclosure">
+            <Enclosure
+               enclosureNumber={creature.enclosure}
+            >
+            </Enclosure>
+         </li>
+      );
+   });
 }
 
 export default EnclosureList;
