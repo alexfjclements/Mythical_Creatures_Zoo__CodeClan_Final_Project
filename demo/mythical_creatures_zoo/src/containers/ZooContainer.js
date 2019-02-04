@@ -19,7 +19,7 @@ class ZooContainer extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         creatures : [
+         creaturesArray: [
             {
                id: 1,
                name: "Daffyd",
@@ -50,14 +50,14 @@ class ZooContainer extends Component {
                enclosure: 2,
                image: "https://www.theoi.com/image/L11.2ArgosPanoptes.jpg"
             }
-         ]  
+         ]
       };
    }
 
    render() {
       return (
          <>
-         
+
         <Router>
          <Fragment>
             <NavBar />
@@ -68,7 +68,8 @@ class ZooContainer extends Component {
             <Route path="/Explore" component={EnclosureList}/>
             <Route path="/Region" component={RegionsDropDown}/>
             <Route path="/Search" component={SearchBox}/>
-            <Route path="/CreatureList" component={CreatureList}/>
+            <Route path="/CreatureList" render={() => <CreatureList pinapple="pinapple" banana={this.state.creaturesArray}/>}
+            />
             <br></br>
             <br></br>
             <Footer />

@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import CreatureDetail from './CreatureDetail.js';
 
-class CreatureList extends Component{
-   render(){
+const CreatureList = ({banana, pinapple}) => {
+
+     //  const listCreatures = banana.map((creature, index) => {
+     //   return <li key={index}>{creature.name}</li>
+     // });
       return(
-         <CreatureDetail />
+         <h4>Creatures! {banana}</h4>
       )
-   }
-}
+   };
 
 export default CreatureList;
