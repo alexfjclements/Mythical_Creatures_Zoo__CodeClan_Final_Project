@@ -28,7 +28,7 @@ class NavBar extends Component {
 
             <div className="child">
                <Link to="/CreatureList">
-               <CreatureList />
+               CreatureList
                </Link>
             </div>
 

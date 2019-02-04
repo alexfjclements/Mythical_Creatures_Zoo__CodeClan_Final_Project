@@ -1,13 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
-class CreatureDetail extends Component{
-   render(){
-      return(
-         "This is a Creature!"
-      )
-   }
+const CreatureDetail = (creature) => (
 
-   
-}
+   <>
+      <p>Name: {creature.name}</p>
+      <p>Breed: {creature.breed}</p>
+      <p>Description: {creature.description}</p>
+   </>
+)
 
 export default CreatureDetail;

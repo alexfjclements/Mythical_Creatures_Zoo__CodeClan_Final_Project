@@ -1,17 +1,30 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import CreatureDetail from './CreatureDetail.js';
 
-const CreatureList = ({creatures = []}) => {
+const CreatureList = ({ creatures = [] }) => {
 
-      const listCreatures = creatures.map((creature, index) => {
-       return <li key={index}>{creature.name}</li>
-     });
-      return(
-         <div>
-         <h4>Creatures!</h4>
-         <p>{listCreatures}</p>
-         </div>
-      )
-   };
+   const listCreatures = creatures.map((creature, index) => {
+      return (
+         <li key={index} className="creature">
+            <CreatureDetail
+               name={creature.name}
+               breed={creature.breed}
+               description={creature.description}
+            >
+            </CreatureDetail>
+         </li>
+      );
+   });
 
-export default CreatureList;
+   return (
+      <ul>
+         {listCreatures}
+      </ul>
+   );
+
+}
+
+
+
+
+   export default CreatureList;
