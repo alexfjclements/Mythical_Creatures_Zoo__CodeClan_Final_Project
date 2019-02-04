@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import AnimalList from './AnimalList';
 import FAQMain from './FAQMain';
 import UsefulLinksMain from './UsefulLinksMain';
+import OurHistoryMain from './OurHistoryMain';
 import './Main.css';
 
 class Main extends Component {

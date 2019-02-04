@@ -4,6 +4,7 @@ import CreaturesButton from './CreaturesButton.js'
 import RegionsDropDown from './RegionsDropDown.js'
 import SearchBox from './SearchBox.js';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 
 class NavBar extends Component {
@@ -13,7 +14,7 @@ class NavBar extends Component {
          <div className="navbar">
 
             <div className="child">
-               <Logo />
+               <Link to ="/"><Logo/></Link>
             </div>
             <div className="child">
                <CreaturesButton />
@@ -28,7 +29,7 @@ class NavBar extends Component {
             </div >
          </div >
 
-      
+
       )
    }
 }
