@@ -6,6 +6,8 @@ class CreatureDetail extends Component{
          "This is a Creature!"
       )
    }
+
+   
 }
 
 export default CreatureDetail;
