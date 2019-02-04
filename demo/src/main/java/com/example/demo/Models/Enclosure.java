@@ -15,7 +15,7 @@ public class Enclosure {
 
     @JsonIgnore
     @OneToMany
-    @JoinColumn(name = "mythical_creature_id", nullable = false)
+    @JoinColumn(name = "mythical_creature_id")
     private List<MythicalCreature> creatures;
 
     @Column(name = "size")
@@ -28,7 +28,7 @@ public class Enclosure {
     private OriginLocation type;
 
     @ManyToOne
-    @JoinColumn(name = "menagerie_id", nullable = false)
+    @JoinColumn(name = "menagerie_id")
     private Menagerie menagerie;
 
     public Enclosure(int size, String name, OriginLocation type) {

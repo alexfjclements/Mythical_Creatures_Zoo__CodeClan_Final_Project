@@ -32,7 +32,7 @@ public class MythicalCreature {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "enclosure_id", nullable = false)
+    @JoinColumn(name = "enclosure_id")
     private Enclosure enclosure;
 
     @Column(name = "breed")

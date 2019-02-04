@@ -18,12 +18,12 @@ public class Menagerie {
 
     @JsonIgnore
     @OneToMany
-    @JoinColumn(name = "enclosure_id", nullable = false)
+    @JoinColumn(name = "enclosure_id")
     private List<Enclosure> enclosures;
 
     @JsonIgnore
     @OneToMany
-    @JoinColumn(name = "visitor_id", nullable = false)
+    @JoinColumn(name = "visitor_id")
     private List<Visitor> visitors;
 
     @Column(name = "entrance")

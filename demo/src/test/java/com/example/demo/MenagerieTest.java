@@ -25,7 +25,7 @@ public class MenagerieTest {
         dragon = new MythicalCreature("bob", Gender.Female, "IKillEat", OriginLocation.Chinese, "", "Dragon");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
         menagerie = new Menagerie("Name", 10);
-        visitor = new Visitor(10);
+        visitor = new Visitor();
     }
 
     @Test

@@ -8,25 +8,14 @@ public class Visitor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int money;
+    private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "menagerie_id", nullable = false)
+    @JoinColumn(name = "menagerie_id")
     private Menagerie menagerie;
 
-    public Visitor(int money) {
-        this.money = money;
+    public Visitor() {
         this.menagerie = null;
-    }
-
-    public Visitor(){}
-
-    public int getMoney() {
-        return money;
-    }
-
-    public void setMoney(int money) {
-        this.money = money;
     }
 
     public Menagerie getMenagerie() {
