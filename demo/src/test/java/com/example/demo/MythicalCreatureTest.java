@@ -17,7 +17,7 @@ public class MythicalCreatureTest {
     @Before
     public void before() {
         killBehaviour = new IKillEat();
-        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "");
+        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "", "Harpy");
     }
 
     @Test
@@ -26,7 +26,7 @@ public class MythicalCreatureTest {
     }
 
     @Test
-    public void canEat(){
-        assertEquals("I eat humans, yum yum", harpy.eat());
+    public void canEatHuman(){
+        assertEquals("I eat humans, yum yum", harpy.eatHuman());
     }
 }

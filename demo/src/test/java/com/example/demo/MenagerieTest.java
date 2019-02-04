@@ -19,8 +19,8 @@ public class MenagerieTest {
     @Before
     public void before() {
         killBehaviour = new IKillEat();
-        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "");
-        dragon = new MythicalCreature("bob", Gender.Female, killBehaviour, OriginLocation.Chinese, "");
+        harpy = new MythicalCreature("Harpy", Gender.Male, killBehaviour, OriginLocation.Greek, "", "Harpy");
+        dragon = new MythicalCreature("bob", Gender.Female, killBehaviour, OriginLocation.Chinese, "", "Dragon");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
         menagerie = new Menagerie("Name", 10);
         visitor = new Visitor(10);

@@ -20,8 +20,8 @@ public class EnclosureTest {
     @Before
     public void before() {
         eatBehaviour = new IKillEat();
-        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "");
-        dragon = new MythicalCreature("bob", Gender.Female, eatBehaviour, OriginLocation.Chinese, "");
+        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "", "Harpy");
+        dragon = new MythicalCreature("bob", Gender.Female, eatBehaviour, OriginLocation.Chinese, "", "Dragon");
         enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
     }
 
@@ -51,7 +51,7 @@ public class EnclosureTest {
 
      @Test
     public void canFeedCreature(){
-        assertEquals("I eat other animals", enclosure.feedCreature(harpy));
+        assertEquals("I eat humans, yum yum", enclosure.feedCreatureHuman(harpy));
      }
 
 

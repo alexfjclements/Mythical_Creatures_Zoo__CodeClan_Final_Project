@@ -88,8 +88,8 @@ public class Enclosure {
         this.creatures.remove(creature);
     }
 
-    public String feedCreature(MythicalCreature creature){
-        String eatString = creature.eat();
+    public String feedCreatureHuman(MythicalCreature creature){
+        String eatString = creature.eatHuman();
         return eatString;
     }
 

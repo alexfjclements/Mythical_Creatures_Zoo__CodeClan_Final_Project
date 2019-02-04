@@ -31,13 +31,17 @@ public class MythicalCreature {
     @JoinColumn(name = "enclosure_id", nullable = false)
     private Enclosure enclosure;
 
-    public MythicalCreature(String name, Gender gender, IKill killBehaviour, OriginLocation originLocation, String description) {
+    @Column(name = "breed")
+    private String breed;
+
+    public MythicalCreature(String name, Gender gender, IKill killBehaviour, OriginLocation originLocation, String description, String breed) {
         this.name = name;
         this.gender = gender;
         this.killBehaviour = killBehaviour;
         this.originLocation = originLocation;
         this.description = description;
         this.enclosure = null;
+        this.breed = breed;
     }
 
     public MythicalCreature(){}
@@ -90,7 +94,15 @@ public class MythicalCreature {
         this.description = description;
     }
 
-    public String eat(){
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String eatHuman(){
         String eatString = killBehaviour.kill();
         return eatString;
     }
