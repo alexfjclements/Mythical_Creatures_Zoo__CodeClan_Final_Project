@@ -12,6 +12,7 @@ import EnclosureList from '../components/Mains/EnclosureList.js';
 import RegionsDropDown from '../components/NavBar/RegionsDropDown.js';
 import CreatureList from '../components/Mains/CreatureList';
 import SearchBox from '../components/NavBar/SearchBox.js';
+import Request from '../helpers/request.js';
 
 
 class ZooContainer extends Component {
@@ -20,84 +21,26 @@ class ZooContainer extends Component {
       super(props);
       this.state = {
          creaturesArray: [
-            {
-               id: 1,
-               name: "Daffyd",
-               breed: "Afanc",
-               gender: "Male",
-               origin_location: "British Isles",
-               description: "Lake monster, looks like a platypus on steroids",
-               enclosure: 1,
-               image: "https://vignette.wikia.nocookie.net/cryptidz/images/8/86/Afanc.jpg/revision/latest?cb=20140422220620"
-            },
-            {
-               id: 2,
-               name: "Peter",
-               breed: "Griffin",
-               gender: "Female",
-               origin_location: "Greece",
-               description: "The griffin, griffon, or gryphon is a legendary creature with the body, tail, and back legs of a lion; the head and wings of an eagle; and sometimes an eagle's talons as its front feet.",
-               enclosure: 2,
-               image: "https://vignette.wikia.nocookie.net/harrypotter/images/f/f8/Griffin.png/revision/latest?cb=20170413064633"
-            },
-            {
-               id: 3,
-               name: "Argos",
-               breed: "Giant",
-               gender: "Male",
-               origin_location: "Greece",
-               description: "Many-eyed giant, also known as Argus Panoptes",
-               enclosure: 2,
-               image: "https://www.theoi.com/image/L11.2ArgosPanoptes.jpg"
-            }
-         ],
-         enclosureArray: [
-            [
-               {
-                  id: 1,
-                  name: "Daffyd",
-                  breed: "Afanc",
-                  gender: "Male",
-                  origin_location: "British Isles",
-                  description: "Lake monster, looks like a platypus on steroids",
-                  enclosure: 1,
-                  image: "https://vignette.wikia.nocookie.net/cryptidz/images/8/86/Afanc.jpg/revision/latest?cb=20140422220620"
-               }],
-            [
-               {
-                  id: 2,
-                  name: "Peter",
-                  breed: "Griffin",
-                  gender: "Female",
-                  origin_location: "Greece",
-                  description: "The griffin, griffon, or gryphon is a legendary creature with the body, tail, and back legs of a lion; the head and wings of an eagle; and sometimes an eagle's talons as its front feet.",
-                  enclosure: 2,
-                  image: "https://vignette.wikia.nocookie.net/harrypotter/images/f/f8/Griffin.png/revision/latest?cb=20170413064633"
-               },
-               {
-                  id: 3,
-                  name: "Argos",
-                  breed: "Giant",
-                  gender: "Male",
-                  origin_location: "Greece",
-                  description: "Many-eyed giant, also known as Argus Panoptes",
-                  enclosure: 2,
-                  image: "https://www.theoi.com/image/L11.2ArgosPanoptes.jpg"
-               }]
 
-         ]
+         ],
+         enclosureArray: []
       };
-      this.handleRegionSelected = this.handleRegionSelected.bind(this);
    }
 
-   handleRegionSelected(index) {
-      const selectedRegion = this.state.creatures[index];
-      this.setState({currentRegion: selectedRegion})
-    }
+   componentDidMount(){
+     let request = new Request();
+     const data = request.get('http://localhost:8080/api/mythicalCreatures')
+     console.log(data);
+     this.setState({creaturesArray: data._embedded.mythicalCreatures})
+     }
+
+
+
+
 
    render() {
       return (
-         <>
+
 
             <Router>
                <Fragment>
@@ -126,7 +69,7 @@ class ZooContainer extends Component {
                   <Route path="/UsefulLinks" component={UsefulLinksMain} />
                </Fragment>
             </Router>
-         </>
+
 
       )
    }
