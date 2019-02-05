@@ -3,7 +3,7 @@ package com.example.demo.components;
 import com.example.demo.Models.*;
 import com.example.demo.repositories.EnclosureRepository;
 import com.example.demo.repositories.MenagerieRepository;
-import com.example.demo.repositories.MythicalCreaturesRepository;
+import com.example.demo.repositories.MythicalCreaturesRepositories.MythicalCreaturesRepository;
 import com.example.demo.repositories.VisitorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -29,11 +29,11 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-       MythicalCreature harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", OriginLocation.Greek, "", "Harpy");
+       MythicalCreature harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", "Greek", "", "Harpy");
        mythicalCreaturesRepository.save(harpy);
-       MythicalCreature unicorn = new MythicalCreature("Melvin", Gender.Female, "IDontKill", OriginLocation.Greek, "", "Unicorn");
+       MythicalCreature unicorn = new MythicalCreature("Melvin", Gender.Female, "IDontKill", "Greek", "", "Unicorn");
        mythicalCreaturesRepository.save(unicorn);
-       Enclosure enclosure = new Enclosure(2, "Greek", OriginLocation.Greek);
+       Enclosure enclosure = new Enclosure(2, "Greek", "Greek");
        enclosureRepository.save(enclosure);
        Menagerie menagerie = new Menagerie("Name", 10);
        menagerieRepository.save(menagerie);

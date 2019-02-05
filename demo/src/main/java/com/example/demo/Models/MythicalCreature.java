@@ -6,7 +6,7 @@ import com.example.demo.IKill.IKillFactory;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "mythical_creatures")
+@Table(name = "mythicalCreatures")
 public class MythicalCreature {
 
     @Id
@@ -23,7 +23,7 @@ public class MythicalCreature {
     private String killBehaviourString;
 
     @Column(name = "originLocation")
-    private OriginLocation originLocation;
+    private String originLocation;
 
     @Column(name = "description")
     private String description;
@@ -35,7 +35,7 @@ public class MythicalCreature {
     @Column(name = "breed")
     private String breed;
 
-    public MythicalCreature(String name, Gender gender, String killBehaviourString, OriginLocation originLocation, String description, String breed) {
+    public MythicalCreature(String name, Gender gender, String killBehaviourString, String originLocation, String description, String breed) {
         this.name = name;
         this.gender = gender;
         this.killBehaviourString = killBehaviourString;
@@ -79,13 +79,11 @@ public class MythicalCreature {
         this.killBehaviourString = killBehaviourString;
     }
 
-
-
-    public Enum getOriginLocation() {
+    public String getOriginLocation() {
         return originLocation;
     }
 
-    public void setOriginLocation(OriginLocation originLocation) {
+    public void setOriginLocation(String originLocation) {
         this.originLocation = originLocation;
     }
 

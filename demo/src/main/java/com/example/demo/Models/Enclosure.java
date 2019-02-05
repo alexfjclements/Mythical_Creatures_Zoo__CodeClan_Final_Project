@@ -25,13 +25,13 @@ public class Enclosure {
     private String name;
 
     @Column(name = "type")
-    private OriginLocation type;
+    private String type;
 
     @ManyToOne
     @JoinColumn(name = "menagerie_id")
     private Menagerie menagerie;
 
-    public Enclosure(int size, String name, OriginLocation type) {
+    public Enclosure(int size, String name, String type) {
         this.creatures = new ArrayList<>();
         this.size = size;
         this.name = name;
@@ -70,11 +70,11 @@ public class Enclosure {
         this.name = name;
     }
 
-    public OriginLocation getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(OriginLocation type) {
+    public void setType(String type) {
         this.type = type;
     }
 
