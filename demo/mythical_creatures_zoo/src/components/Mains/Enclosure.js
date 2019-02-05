@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import CreatureList from './CreatureList.js';
 
-const Enclosure = ({creature}) => {
+const Enclosure = ({enclosure}) => {
    return (
    <>
-      <p>EnclosureNumber: {creature.enclosure}</p>
+      <h4>EnclosureNumber: {enclosure[0].enclosure}</h4>
    </>
    );
 }
