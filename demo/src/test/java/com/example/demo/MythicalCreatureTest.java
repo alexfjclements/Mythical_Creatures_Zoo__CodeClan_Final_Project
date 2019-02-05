@@ -1,7 +1,7 @@
-import com.example.demo.IEat.IEatCarnivore;
+package com.example.demo;
+
 import com.example.demo.Models.MythicalCreature;
 import com.example.demo.Models.Gender;
-import com.example.demo.IEat.IEatCarnivore;
 
 import com.example.demo.Models.OriginLocation;
 import org.junit.Before;
@@ -12,15 +12,26 @@ import static org.junit.Assert.assertEquals;
 public class MythicalCreatureTest {
 
     private MythicalCreature harpy;
-    private IEatCarnivore eatBehaviour;
+    private MythicalCreature unicorn;
 
     @Before
     public void before() {
-        harpy = new MythicalCreature("Harpy", Gender.Male, eatBehaviour, OriginLocation.Greek, "");
+        harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", "Greek", "", "Harpy");
+        unicorn = new MythicalCreature("Melvin", Gender.Female, "IDontKill", "Greek", "", "Unicorn");
     }
 
     @Test
     public void hasName() {
         assertEquals("Harpy", harpy.getName());
+    }
+
+    @Test
+    public void canEatHuman(){
+        assertEquals("I eat humans, yum yum", harpy.eat());
+    }
+
+    @Test
+    public void canEatPlants(){
+        assertEquals("I eat plants", unicorn.eat());
     }
 }

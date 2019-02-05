@@ -1,31 +1,57 @@
 package com.example.demo.Models;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
+@Table(name = "enclosures")
 public class Enclosure {
-    private ArrayList<MythicalCreature> creatures;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @JsonIgnore
+    @OneToMany
+    @JoinColumn(name = "mythical_creature_id")
+    private List<MythicalCreature> creatures;
+
+    @Column(name = "size")
     private int size;
 
+    @Column(name = "name")
     private String name;
 
-    private OriginLocation type;
+    @Column(name = "type")
+    private String type;
 
-    public Enclosure(int size, String name, OriginLocation type) {
+    @ManyToOne
+    @JoinColumn(name = "menagerie_id")
+    private Menagerie menagerie;
+
+    public Enclosure(int size, String name, String type) {
         this.creatures = new ArrayList<>();
         this.size = size;
         this.name = name;
         this.type = type;
+        this.menagerie = null;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Enclosure() {
     }
 
-    public ArrayList<MythicalCreature> getCreatures() {
+    public List<MythicalCreature> getCreatures() {
         return creatures;
-    }
-
-    public void setCreatures(ArrayList<MythicalCreature> creatures) {
-        this.creatures = creatures;
     }
 
     public int getSize() {
@@ -44,19 +70,41 @@ public class Enclosure {
         this.name = name;
     }
 
-    public OriginLocation getType() {
+    public String getType() {
         return type;
     }
 
-    public void setType(OriginLocation type) {
+    public void setType(String type) {
         this.type = type;
     }
 
     public void addCreature(MythicalCreature creature) {
-        this.creatures.add(creature);
+        if (creature.getOriginLocation() == type) {
+            this.creatures.add(creature);
+        }
     }
 
     public void removeCreature(MythicalCreature creature) {
         this.creatures.remove(creature);
     }
+
+    public String feedCreatureHuman(MythicalCreature creature){
+        String eatString = creature.eat();
+        return eatString;
+    }
+
+    public Menagerie getMenagerie() {
+        return menagerie;
+    }
+
+    public void setMenagerie(Menagerie menagerie) {
+        this.menagerie = menagerie;
+    }
+
+    public void setCreatures(List<MythicalCreature> creatures) {
+        this.creatures = creatures;
+    }
 }
+
+
+

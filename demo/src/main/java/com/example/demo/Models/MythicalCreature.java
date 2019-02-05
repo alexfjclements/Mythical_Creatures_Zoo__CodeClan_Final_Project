@@ -1,25 +1,51 @@
 package com.example.demo.Models;
 
-import com.example.demo.IEat.IEat;
+import com.example.demo.IKill.IKill;
+import com.example.demo.IKill.IKillFactory;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "mythicalCreatures")
 public class MythicalCreature {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
-    private Enum gender;
-    private IEat eatBehaviour;
-    private Enum originLocation;
+
+    @Column(name = "gender")
+    private Gender gender;
+
+    @Column(name = "killBehaviour")
+    private String killBehaviourString;
+
+    @Column(name = "originLocation")
+    private String originLocation;
+
+    @Column(name = "description")
     private String description;
 
-    public MythicalCreature(String name, Enum gender, IEat eatBehaviour, Enum originLocation, String description) {
-        this.id = id;
+    @ManyToOne
+    @JoinColumn(name = "enclosure_id")
+    private Enclosure enclosure;
+
+    @Column(name = "breed")
+    private String breed;
+
+    public MythicalCreature(String name, Gender gender, String killBehaviourString, String originLocation, String description, String breed) {
         this.name = name;
         this.gender = gender;
-        this.eatBehaviour = eatBehaviour;
+        this.killBehaviourString = killBehaviourString;
         this.originLocation = originLocation;
         this.description = description;
+        this.enclosure = null;
+        this.breed = breed;
     }
 
-    public MythicalCreature(){};
+    public MythicalCreature(){}
 
     public Long getId() {
         return id;
@@ -41,23 +67,23 @@ public class MythicalCreature {
         return gender;
     }
 
-    public void setGender(Enum gender) {
+    public void setGender(Gender gender) {
         this.gender = gender;
     }
 
-    public IEat getEatBehaviour() {
-        return eatBehaviour;
+    public String getKillBehaviourString() {
+        return killBehaviourString;
     }
 
-    public void setEatBehaviour(IEat eatBehaviour) {
-        this.eatBehaviour = eatBehaviour;
+    public void setKillBehaviourString(String killBehaviourString) {
+        this.killBehaviourString = killBehaviourString;
     }
 
-    public Enum getOriginLocation() {
+    public String getOriginLocation() {
         return originLocation;
     }
 
-    public void setOriginLocation(Enum originLocation) {
+    public void setOriginLocation(String originLocation) {
         this.originLocation = originLocation;
     }
 
@@ -68,4 +94,28 @@ public class MythicalCreature {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getBreed() {
+        return breed;
+    }
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+
+    public String eat(){
+        IKillFactory iKillFactory = new IKillFactory();
+        IKill killBehaviour = iKillFactory.getKillBehaviour(this.killBehaviourString);
+        String eatHuman = killBehaviour.kill();
+        return eatHuman;
+    }
+
+    public Enclosure getEnclosure() {
+        return enclosure;
+    }
+
+    public void setEnclosure(Enclosure enclosure) {
+        this.enclosure = enclosure;
+    }
+
 }
