@@ -17,16 +17,5 @@ public class MythicalCreatureController {
 
     @Autowired
     MythicalCreaturesRepository mythicalCreaturesRepository;
-
-    @GetMapping
-    public List<MythicalCreature> getAllMythicalCreatures(){
-        return mythicalCreaturesRepository.findAll();
-    }
-
-    @GetMapping(value="{id}")
-    public Optional<MythicalCreature> getMythicalCreature(@PathVariable Long id){
-        return mythicalCreaturesRepository.findById(id);
-    }
-
-
+    
 }

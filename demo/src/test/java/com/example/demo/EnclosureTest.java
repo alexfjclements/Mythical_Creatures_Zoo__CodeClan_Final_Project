@@ -17,7 +17,6 @@ public class EnclosureTest {
     private MythicalCreature dragon;
     private IKill eatBehaviour;
     private Enclosure enclosure;
-    private OriginLocation originLocation;
 
     @Before
     public void before() {

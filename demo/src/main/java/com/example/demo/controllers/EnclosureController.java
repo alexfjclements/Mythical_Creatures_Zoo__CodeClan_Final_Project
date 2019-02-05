@@ -15,8 +15,4 @@ public class EnclosureController {
     @Autowired
     EnclosureRepository enclosureRepository;
 
-    @GetMapping
-    public List<Enclosure> findAllEnclosures(){
-        return enclosureRepository.findAll();
-    }
 }

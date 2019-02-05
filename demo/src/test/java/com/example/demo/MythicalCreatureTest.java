@@ -1,8 +1,5 @@
 package com.example.demo;
 
-import com.example.demo.IKill.IDontKill;
-import com.example.demo.IKill.IKill;
-import com.example.demo.IKill.IKillEat;
 import com.example.demo.Models.MythicalCreature;
 import com.example.demo.Models.Gender;
 
