@@ -1,11 +1,33 @@
 import React, { Component } from 'react';
-import CreatureList from './CreatureList.js';
+import CreatureDetail from './CreatureDetail.js';
 
-const Enclosure = ({enclosure}) => {
+const Enclosure = ({ enclosures = [] }) => {
+
+   const listCreaturesInEnclosure = enclosures.map((creature, index) => {
+      return (
+         <li key={index} className="creature_list">
+            <CreatureDetail
+               name={creature.name}
+               breed={creature.breed}
+               description={creature.description}
+            >
+            </CreatureDetail>
+         </li>
+      );
+   });
+
+   const presentEnclosure = (enclosures) => (
+      <>
+         <h4>Enclosure Number: {enclosures[0].enclosure}</h4>
+         {listCreaturesInEnclosure}
+      </>
+   );
+
+
    return (
-   <>
-      <h4>EnclosureNumber: {enclosure[0].enclosure}</h4>
-   </>
+      <ul>
+         {presentEnclosure(enclosures)}
+      </ul>
    );
 }
 
