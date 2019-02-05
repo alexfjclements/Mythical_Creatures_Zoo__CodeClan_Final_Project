@@ -6,12 +6,18 @@ const EnclosureList = ({creatures = []})=>{
       return (
          <li key={index} className="enclosure">
             <Enclosure
-               enclosureNumber={creature.enclosure}
+               creature={creature}
             >
             </Enclosure>
          </li>
       );
    });
+
+   return (
+      <ul>
+         {listEnclosures}
+      </ul>
+   );
 }
 
 export default EnclosureList;
