@@ -87,7 +87,13 @@ class ZooContainer extends Component {
 
          ]
       };
+      this.handleRegionSelected = this.handleRegionSelected.bind(this);
    }
+
+   handleRegionSelected(index) {
+      const selectedRegion = this.state.creatures[index];
+      this.setState({currentRegion: selectedRegion})
+    }
 
    render() {
       return (
@@ -103,7 +109,12 @@ class ZooContainer extends Component {
                   {/* <Route path="/Explore" component={EnclosureList}/> */}
                   <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
                   />
-                  <Route path="/Region" component={RegionsDropDown} />
+                  {/* <Route path="/Region" component={RegionsDropDown} /> */}
+
+                  <Route path="/Region" render={() => <RegionsDropDown creatures={this.state.creaturesArray} />}
+                  />
+
+
                   <Route path="/Search" component={SearchBox} />
                   <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray} />}
                   />
