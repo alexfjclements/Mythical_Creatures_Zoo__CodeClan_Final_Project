@@ -39,7 +39,7 @@ class ZooContainer extends Component {
       <Router>
       <Fragment>
       <NavBar />
-      <Route exact path="/" component={Logo} />
+      <Route exact path="/" component={HomePage} />
       <br></br>
       <br></br>
       <Main />
@@ -47,25 +47,8 @@ class ZooContainer extends Component {
       <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
       />
       {/* <Route path="/Region" component={RegionsDropDown} /> */}
-
       <Route path="/Region" render={() => <RegionsDropDown creatures={this.state.creaturesArray} />}
       />
-
-<<<<<<< HEAD
-            <Router>
-               <Fragment>
-                  <NavBar />
-                  <Route exact path="/" component={HomePage} />
-                  <br></br>
-                  <br></br>
-                  <Main />
-                  {/* <Route path="/Explore" component={EnclosureList}/> */}
-                  <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
-                  />
-                  {/* <Route path="/Region" component={RegionsDropDown} /> */}
-=======
->>>>>>> develop
-
       <Route path="/Search" component={SearchBox} />
       <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray} />}
       />
@@ -77,8 +60,6 @@ class ZooContainer extends Component {
       <Route path="/UsefulLinks" component={UsefulLinksMain} />
       </Fragment>
       </Router>
-
-
     )
   }
 }
