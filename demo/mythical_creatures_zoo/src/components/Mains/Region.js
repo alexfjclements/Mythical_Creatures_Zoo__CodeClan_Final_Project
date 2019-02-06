@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import CreatureDetail from './CreatureDetail.js';
 
-const Region = ({ creaturesArray = [], region }) => {
-
-    const filterCreaturesByRegion = creaturesArray.filter(creature => creature.originLocation === region);
+const Region = ({ filteredCreaturesArray = [] }) => {
 
     const renderCreatures = () => {
-        filterCreaturesByRegion.map((creature, index) => {
+        filteredCreaturesArray.map((creature, index) => {
             return (
                 <li key={index} className="creature_list">
                     <CreatureDetail
@@ -22,7 +20,7 @@ const Region = ({ creaturesArray = [], region }) => {
 
     const presentRegion = () => (
         <>
-            <h4>Region: {filterCreaturesByRegion[0].originLocation}</h4>
+            <h4>Region: {filteredCreaturesArray[0].originLocation}</h4>
             {renderCreatures}
         </>
     );

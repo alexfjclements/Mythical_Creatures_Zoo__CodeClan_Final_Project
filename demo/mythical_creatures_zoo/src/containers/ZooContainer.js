@@ -16,6 +16,9 @@ import Request from '../helpers/request.js';
 import HomePage from '../components/Mains/HomePage.js';
 import Region from '../components/Mains/Region.js';
 import { Link } from 'react-router-dom';
+import {createBrowserHistory} from 'history';
+
+const history = createBrowserHistory();
 
 
 class ZooContainer extends Component {
@@ -24,8 +27,10 @@ class ZooContainer extends Component {
       super(props);
       this.state = {
          creaturesArray: [],
+         filteredCreaturesArray: [],
          enclosureArray: []
       };
+      this.onRegionSelected = this.onRegionSelected.bind(this);
    }
 
    componentDidMount() {
@@ -36,18 +41,16 @@ class ZooContainer extends Component {
          })
    }
 
-   onRegionSelected(region) {
-      return (
-         <Route path="/Region" render={() => <Region creaturesArray={this.state.creaturesArray} region={region} /> } 
-         />
-      );
+   onRegionSelected(regionToRender) {
+      const filterCreaturesByRegion = this.state.creaturesArray.filter(creature => creature.originLocation === regionToRender);
+      this.setState({ filteredCreaturesArray: filterCreaturesByRegion});
    }
 
    render() {
       return (
          <Router>
             <Fragment>
-               <NavBar onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />
+               <NavBar />
                <Route exact path="/" component={HomePage} />
                <br></br>
                <br></br>
@@ -55,10 +58,10 @@ class ZooContainer extends Component {
                {/* <Route path="/Explore" component={EnclosureList}/> */}
                <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
                />
-               <Route path="/Region" />
+               {/* <Route path="/Region" /> */}
                {/* <Route path="/Region" render={() => <RegionsDropDown onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />} */}
                <Route path="/Search" component={SearchBox} />
-               <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray} />}
+               <Route path="/CreatureList" render={() => <CreatureList onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />}
                />
                <br></br>
                <br></br>

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Logo from './Logo.js';
 import ExploreButton from './ExploreButton.js'
-import RegionsDropDown from './RegionsDropDown.js'
 import SearchBox from './SearchBox.js';
 import './NavBar.css';
 import { Link } from 'react-router-dom';
@@ -28,10 +27,6 @@ const NavBar = ({ onRegionSelected, creatures = [] }) => {
             <Link to="/CreatureList">
                CreatureList
                </Link>
-         </div>
-
-         <div className="child">
-               <RegionsDropDown onRegionSelected={onRegionSelected} creatures={creatures}/>
          </div>
 
          <div className="child">

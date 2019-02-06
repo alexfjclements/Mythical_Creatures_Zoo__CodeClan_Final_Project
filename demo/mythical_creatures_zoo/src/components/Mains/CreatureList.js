@@ -3,8 +3,9 @@ import CreatureDetail from './CreatureDetail.js';
 import './Main.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddCreature from './AddCreature.js';
+import RegionsDropDown from '../NavBar/RegionsDropDown.js'
 
-const CreatureList = ({ creatures = [] }) => {
+const CreatureList = ({onRegionSelected, creatures = [] }) => {
 
    const listCreatures = creatures.map((creature, index) => {
       return (
@@ -21,6 +22,7 @@ const CreatureList = ({ creatures = [] }) => {
    return (
      <Fragment>
       <Route path="/AddCreature" component={AddCreature}></Route>
+      <RegionsDropDown onRegionSelected={onRegionSelected} creatures={creatures} />
       <ul>
          {listCreatures}
       </ul>

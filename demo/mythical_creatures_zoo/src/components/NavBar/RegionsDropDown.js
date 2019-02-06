@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import './NavBar.css';
+import _ from 'lodash';
 
-// class RegionsDropDown extends Component{
-//    render(){
-//       return(
-//          "This is the Regions DropDown!"
-//       )
-//    }
-// }
+const RegionsDropDown = ({ onRegionSelected, creatures = [] }) => {
 
-const RegionsDropDown = ({onRegionSelected, creatures = [] }) => {
-  const options = creatures.map((creature, index) => {
-    return <option value={index} key={index}>{creature.originLocation}</option>
+  let getUniqueRegions = [];
+
+  const getRegions = creatures.map((creature) => {
+    return creature.originLocation;
+  })
+
+  getUniqueRegions = _.uniqBy(getRegions, (region) => {
+    return region;
+  })
+
+
+  const options = getUniqueRegions.map((region, index) => {
+    return <option value={region} key={index}>{region}</option>
   })
 
   function handleChange(event) {
@@ -20,7 +25,7 @@ const RegionsDropDown = ({onRegionSelected, creatures = [] }) => {
 
   return (
     <select id="region-selector" onChange={handleChange} defaultValue="default">
-      <option disabled value="default">Choose a Region...</option>
+      <option value="default">All Regions</option>
       {options}
     </select>
   )
