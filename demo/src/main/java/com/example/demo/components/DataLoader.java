@@ -35,25 +35,25 @@ public class DataLoader implements ApplicationRunner {
         menagerieRepository.save(mythicalMenagerie);
 
         //CREATURES GREEK
-       MythicalCreature harpy1 = new MythicalCreature("Jarpy", Gender.Female, "IKillEat", "Greek", "A creature with a woman's head and body and a bird's wings and claws", "Harpy");
+       MythicalCreature harpy1 = new MythicalCreature("Jarpy", "Female", "IKillEat", "Greek", "A creature with a woman's head and body and a bird's wings and claws", "Harpy");
        mythicalCreaturesRepository.save(harpy1);
-       MythicalCreature harpy2 = new MythicalCreature("Flarpy", Gender.Female, "IKillEat", "Greek", "A creature with a woman's head and body and a bird's wings and claw", "Harpy");
+       MythicalCreature harpy2 = new MythicalCreature("Flarpy", "Female", "IKillEat", "Greek", "A creature with a woman's head and body and a bird's wings and claw", "Harpy");
        mythicalCreaturesRepository.save(harpy2);
 
-       MythicalCreature unicorn1 = new MythicalCreature("Melvin", Gender.Male, "IKillEat", "Greek", "A beast with a single, spiraling horn projecting from it's forehead. Commonly seen as a symbol of purity and grace", "Unicorn");
+       MythicalCreature unicorn1 = new MythicalCreature("Melvin", "Male", "IKillEat", "Greek", "A beast with a single, spiraling horn projecting from it's forehead. Commonly seen as a symbol of purity and grace", "Unicorn");
        mythicalCreaturesRepository.save(unicorn1);
-       MythicalCreature unicorn2 = new MythicalCreature("Melvinetta", Gender.Female, "IKillEat", "Greek", "A beast with a single, spiraling horn projecting from it's forehead. Commonly seen as a symbol of purity and grace", "Unicorn");
+       MythicalCreature unicorn2 = new MythicalCreature("Melvinetta", "Female", "IKillEat", "Greek", "A beast with a single, spiraling horn projecting from it's forehead. Commonly seen as a symbol of purity and grace", "Unicorn");
        mythicalCreaturesRepository.save(unicorn2);
 
        //CREATURES NORSE
-        MythicalCreature wolf1 = new MythicalCreature("Geri", Gender.NonBinary, "IKillEat", "Norse", "Known as 'The Greedy one'. One of two wolves said to accompany Odin", "Wolf");
+        MythicalCreature wolf1 = new MythicalCreature("Geri", "NonBinary", "IKillEat", "Norse", "Known as 'The Greedy one'. One of two wolves said to accompany Odin", "Wolf");
         mythicalCreaturesRepository.save(wolf1);
-        MythicalCreature wolf2 = new MythicalCreature("Freki", Gender.NonBinary, "IKillEat", "Norse", "Known as 'The Ravenous one'. One of two wolves said to accompany Odin", "Wolf");
+        MythicalCreature wolf2 = new MythicalCreature("Freki", "NonBinary", "IKillEat", "Norse", "Known as 'The Ravenous one'. One of two wolves said to accompany Odin", "Wolf");
         mythicalCreaturesRepository.save(wolf2);
 
-        MythicalCreature horse1 = new MythicalCreature("Sleipnir", Gender.NonBinary, "IKillEat", "Norse", "Odin's 8-legged steed", "Horse");
+        MythicalCreature horse1 = new MythicalCreature("Sleipnir", "NonBinary", "IKillEat", "Norse", "Odin's 8-legged steed", "Horse");
         mythicalCreaturesRepository.save(horse1);
-        MythicalCreature horse2 = new MythicalCreature("Hófvarpnir", Gender.NonBinary, "IKillEat", "Norse", "The Goddess' Frigg's flying, sea-treading horse", "Horse");
+        MythicalCreature horse2 = new MythicalCreature("Hófvarpnir", "NonBinary", "IKillEat", "Norse", "The Goddess' Frigg's flying, sea-treading horse", "Horse");
         mythicalCreaturesRepository.save(horse2);
 
        //ENCLOSURES
