@@ -29,9 +29,11 @@ class ZooContainer extends Component {
 
    componentDidMount(){
      let request = new Request();
-     const data = request.get('http://localhost:8080/api/mythicalCreatures')
-     console.log(data);
-     this.setState({creaturesArray: data._embedded.mythicalCreatures})
+     request.get('/api/mythicalCreatures')
+      .then((data) => {
+        this.setState({creaturesArray: data._embedded.mythicalCreatures})
+
+      })
      }
 
 
