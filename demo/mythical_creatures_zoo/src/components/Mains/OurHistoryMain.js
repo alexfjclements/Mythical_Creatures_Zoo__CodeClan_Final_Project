@@ -13,7 +13,7 @@ class OurHistoryMain extends Component {
                
                <div className="historychild">
                <p>Ray Greenan</p>
-               It is because of Ray that there are no Harpies left in the UK. You're welcome.
+               Ray single handedly hunted down every harpy in Britain, which is why you never hear about them. Thanks Ray!
                </div>
                
                <div className="historychild">
