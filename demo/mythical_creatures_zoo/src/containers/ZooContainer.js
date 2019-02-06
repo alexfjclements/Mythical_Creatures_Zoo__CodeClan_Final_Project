@@ -12,6 +12,7 @@ import EnclosureList from '../components/Mains/EnclosureList.js';
 import RegionsDropDown from '../components/NavBar/RegionsDropDown.js';
 import CreatureList from '../components/Mains/CreatureList';
 import SearchBox from '../components/NavBar/SearchBox.js';
+import HomePage from '../components/Mains/HomePage.js';
 
 
 class ZooContainer extends Component {
@@ -102,7 +103,7 @@ class ZooContainer extends Component {
             <Router>
                <Fragment>
                   <NavBar />
-                  <Route exact path="/" component={Logo} />
+                  <Route exact path="/" component={HomePage} />
                   <br></br>
                   <br></br>
                   <Main />
