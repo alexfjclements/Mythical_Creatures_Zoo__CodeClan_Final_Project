@@ -33,6 +33,11 @@ class ZooContainer extends Component {
     .then((data) => {
       this.setState({creaturesArray: data._embedded.mythicalCreatures})
     })
+
+    request.get('/api/enclosures')
+    .then((data) => {
+      this.setState({enclosureArray: data._embedded.enclosures})
+    })
   }
 
   render() {
