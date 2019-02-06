@@ -9,13 +9,13 @@ import './NavBar.css';
 //    }
 // }
 
-const RegionsDropDown = (props, { creatures = [] }) => {
+const RegionsDropDown = ({onRegionSelected, creatures = [] }) => {
   const options = creatures.map((creature, index) => {
-    return <option value={index} key={index}>{creature.origin_location}</option>
+    return <option value={index} key={index}>{creature.originLocation}</option>
   })
 
   function handleChange(event) {
-    props.onRegionSelected(event.target.value);
+    onRegionSelected(event.target.value);
   }
 
   return (

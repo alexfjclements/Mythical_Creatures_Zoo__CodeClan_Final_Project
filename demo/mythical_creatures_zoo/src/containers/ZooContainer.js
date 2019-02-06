@@ -14,6 +14,7 @@ import CreatureList from '../components/Mains/CreatureList';
 import SearchBox from '../components/NavBar/SearchBox.js';
 import Request from '../helpers/request.js';
 import HomePage from '../components/Mains/HomePage.js';
+import Region from '../components/Mains/Region.js';
 
 
 class ZooContainer extends Component {
@@ -34,6 +35,10 @@ class ZooContainer extends Component {
     })
   }
 
+  onRegionSelected(region){
+   Region(this.state.creaturesArray, region);
+  }
+
   render() {
     return(
       <Router>
@@ -47,7 +52,7 @@ class ZooContainer extends Component {
       <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
       />
       {/* <Route path="/Region" component={RegionsDropDown} /> */}
-      <Route path="/Region" render={() => <RegionsDropDown creatures={this.state.creaturesArray} />}
+      <Route path="/Region" render={() => <RegionsDropDown onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />}
       />
       <Route path="/Search" component={SearchBox} />
       <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray} />}
