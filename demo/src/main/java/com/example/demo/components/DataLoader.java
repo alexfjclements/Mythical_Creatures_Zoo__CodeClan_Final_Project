@@ -29,9 +29,9 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-       MythicalCreature harpy1 = new MythicalCreature("Jarpy", Gender.Male, "IKillEat", "Greek", "", "Harpy");
+       MythicalCreature harpy1 = new MythicalCreature("Jarpy", "Male", "IKillEat", "Greek", "", "Harpy");
        mythicalCreaturesRepository.save(harpy1);
-       MythicalCreature harpy2 = new MythicalCreature("Flarpy", Gender.Female, "IKillEat", "Greek", "", "Harpy");
+       MythicalCreature harpy2 = new MythicalCreature("Flarpy", "Male", "IKillEat", "Greek", "", "Harpy");
        mythicalCreaturesRepository.save(harpy2);
        Enclosure enclosure = new Enclosure(2, "Harpy Enclosure", "Greek");
        enclosureRepository.save(enclosure);
@@ -41,7 +41,7 @@ public class DataLoader implements ApplicationRunner {
 
 
 
-       MythicalCreature unicorn = new MythicalCreature("Melvin", Gender.Female, "IDontKill", "Greek", "", "Unicorn");
+       MythicalCreature unicorn = new MythicalCreature("Melvin", "Male", "IDontKill", "Greek", "", "Unicorn");
        mythicalCreaturesRepository.save(unicorn);
 
        Menagerie menagerie = new Menagerie("Name", 10);

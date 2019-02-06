@@ -35,7 +35,7 @@ class CreatureFormContainer extends Component {
 
   render(){
     return (
-      <CreatureForm handleCreaturePost={this.handlePiratePost} />
+      <CreatureForm handleCreaturePost={this.handleCreaturePost} />
     )
   }
 
