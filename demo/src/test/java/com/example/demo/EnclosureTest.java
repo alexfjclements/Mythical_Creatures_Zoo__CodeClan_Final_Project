@@ -23,6 +23,7 @@ public class EnclosureTest {
         eatBehaviour = new IKillEat();
         harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", "Greek", "", "Harpy");
         dragon = new MythicalCreature("bob", Gender.Female, "IKillEat", "Greek", "", "Dragon");
+        dragon = new MythicalCreature("bob", Gender.Female, "IKillEat", "Chinese", "", "Dragon");
         enclosure = new Enclosure(2, "Greek", "Greek");
     }
 

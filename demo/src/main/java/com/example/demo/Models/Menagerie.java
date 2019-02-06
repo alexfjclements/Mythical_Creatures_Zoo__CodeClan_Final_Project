@@ -1,5 +1,6 @@
 package com.example.demo.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -16,14 +17,14 @@ public class Menagerie {
     @Column(name = "name")
     private String name;
 
-    @JsonIgnore
-    @OneToMany
-    @JoinColumn(name = "enclosure_id")
+    @JsonIgnoreProperties
+    @OneToMany(mappedBy = "menagerie", fetch = FetchType.LAZY)
+//    @JoinColumn(name = "enclosure_id_inMenagerie")
     private List<Enclosure> enclosures;
 
-    @JsonIgnore
-    @OneToMany
-    @JoinColumn(name = "visitor_id")
+    @JsonIgnoreProperties("menagerie")
+    @OneToMany(mappedBy = "menagerie", fetch = FetchType.LAZY)
+//    @JoinColumn(name = "visitor_id_deleteme")
     private List<Visitor> visitors;
 
     @Column(name = "entrance")
