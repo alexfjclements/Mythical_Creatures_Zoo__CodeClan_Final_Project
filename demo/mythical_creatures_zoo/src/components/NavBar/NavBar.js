@@ -8,47 +8,42 @@ import { Link } from 'react-router-dom';
 import CreatureList from '../Mains/CreatureList.js';
 
 
-class NavBar extends Component {
+const NavBar = ({ onRegionSelected, creatures = [] }) => {
+   return (
+      <div className="navbar">
 
-   render() {
-      return (
-         <div className="navbar">
+         <div className="child">
+            <Link to="/">
+               <Logo />
+            </Link>
+         </div>
 
-            <div className="child">
-               <Link to ="/">
-               <Logo/>
-               </Link>
-            </div>
-
-            <div className="child">
-               <Link to="/Explore">
+         <div className="child">
+            <Link to="/Explore">
                <ExploreButton />
-               </Link>
-            </div>
+            </Link>
+         </div>
 
-            <div className="child">
-               <Link to="/CreatureList">
+         <div className="child">
+            <Link to="/CreatureList">
                CreatureList
                </Link>
-            </div>
+         </div>
 
-            <div className="child">
-               <Link to="/Region">
-               <RegionsDropDown />
-               </Link>
-            </div>
+         <div className="child">
+               <RegionsDropDown onRegionSelected={onRegionSelected} creatures={creatures}/>
+         </div>
 
-            <div className="child">
-               <Link to="/Search">
+         <div className="child">
+            <Link to="/Search">
                <SearchBox />
-               </Link>
-            </div >
-
+            </Link>
          </div >
 
+      </div >
 
-      )
-   }
+
+   )
 }
 
 export default NavBar;
