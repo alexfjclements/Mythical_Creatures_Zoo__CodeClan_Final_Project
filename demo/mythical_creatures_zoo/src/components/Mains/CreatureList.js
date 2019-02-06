@@ -19,6 +19,7 @@ const CreatureList = ({ creatures = [] }) => {
          </li>
       );
    });
+
    return (
      <Fragment>
       <Link to="/AddCreature">Add New Creature</Link>
