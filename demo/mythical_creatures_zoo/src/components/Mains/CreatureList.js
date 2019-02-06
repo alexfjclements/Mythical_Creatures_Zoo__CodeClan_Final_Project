@@ -3,6 +3,7 @@ import CreatureDetail from './CreatureDetail.js';
 import './Main.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddCreature from './AddCreature.js';
+import { Link } from 'react-router-dom';
 
 const CreatureList = ({ creatures = [] }) => {
 
@@ -20,11 +21,11 @@ const CreatureList = ({ creatures = [] }) => {
    });
    return (
      <Fragment>
-      <Route path="/AddCreature" component={AddCreature}></Route>
+      <Link to="/AddCreature" component={AddCreature}>asdf</Link>
       <ul>
          {listCreatures}
       </ul>
-      </Fragment>
+    </Fragment>
    );
 
 }
