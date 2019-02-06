@@ -20,9 +20,6 @@ class ZooContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      creaturesArray: [
-
-      ],
       enclosureArray: []
     };
   }
@@ -34,14 +31,7 @@ class ZooContainer extends Component {
     this.setState({creaturesArray: data._embedded.mythicalCreatures})
   }
 
-
-
-
-
   render() {
-    return (
-
-
       <Router>
       <Fragment>
       <NavBar />
