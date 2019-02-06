@@ -57,7 +57,10 @@
    width: 330px;
  
    margin: 10px;
- 
- 
+ }
+
+ .homepage{
+   text-align: center;
+   font-size: 80px;
  }
  

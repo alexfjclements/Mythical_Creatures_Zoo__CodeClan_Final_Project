@@ -29,12 +29,21 @@ public class DataLoader implements ApplicationRunner {
     }
 
     public void run(ApplicationArguments args){
-       MythicalCreature harpy = new MythicalCreature("Harpy", Gender.Male, "IKillEat", "Greek", "", "Harpy");
-       mythicalCreaturesRepository.save(harpy);
+       MythicalCreature harpy1 = new MythicalCreature("Jarpy", Gender.Male, "IKillEat", "Greek", "", "Harpy");
+       mythicalCreaturesRepository.save(harpy1);
+       MythicalCreature harpy2 = new MythicalCreature("Flarpy", Gender.Female, "IKillEat", "Greek", "", "Harpy");
+       mythicalCreaturesRepository.save(harpy2);
+       Enclosure enclosure = new Enclosure(2, "Harpy Enclosure", "Greek");
+       enclosureRepository.save(enclosure);
+
+
+
+
+
+
        MythicalCreature unicorn = new MythicalCreature("Melvin", Gender.Female, "IDontKill", "Greek", "", "Unicorn");
        mythicalCreaturesRepository.save(unicorn);
-       Enclosure enclosure = new Enclosure(2, "Greek", "Greek");
-       enclosureRepository.save(enclosure);
+
        Menagerie menagerie = new Menagerie("Name", 10);
        menagerieRepository.save(menagerie);
        Visitor visitor1 = new Visitor();
