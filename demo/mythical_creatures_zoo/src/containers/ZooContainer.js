@@ -26,39 +26,44 @@ class ZooContainer extends Component {
     };
   }
 
-  componentDidMount(){
+  componentDidMount() {
     let request = new Request();
     request.get('http://localhost:8080/api/mythicalCreatures')
-    .then((data) => {
-      this.setState({creaturesArray: data._embedded.mythicalCreatures})
-    })
+      .then((data) => {
+        this.setState({ creaturesArray: data._embedded.mythicalCreatures })
+      })
   }
 
   render() {
-    return(
+    return (
       <Router>
-      <Fragment>
-      <NavBar />
-      <Route exact path="/" component={HomePage} />
-      <br></br>
-      <br></br>
-      <Main />
-      {/* <Route path="/Explore" component={EnclosureList}/> */}
-      <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
-      />
-      {/* <Route path="/Region" component={RegionsDropDown} /> */}
-      <Route path="/Region" render={() => <RegionsDropDown creatures={this.state.creaturesArray} />}
-      />
-      <Route path="/Search" component={SearchBox} />
-      <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray} />}
-      />
-      <br></br>
-      <br></br>
-      <Footer />
-      <Route path="/FAQ" component={FAQMain} />
-      <Route path="/OurHistory" component={OurHistoryMain} />
-      <Route path="/UsefulLinks" component={UsefulLinksMain} />
-      </Fragment>
+        <Fragment>
+
+          <NavBar />
+
+          <Route exact path="/" component={HomePage} />
+          <br></br>
+          <br></br>
+
+
+          <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
+          />
+
+          <Route path="/Region" render={() => <RegionsDropDown creatures={this.state.creaturesArray} />}
+          />
+          <Route path="/Search" component={SearchBox} />
+          <Route path="/CreatureList" render={() => <CreatureList creatures={this.state.creaturesArray} />}
+          />
+
+          <br></br>
+          <br></br>
+          <div className="footer">
+            <Footer />
+          </div>
+          <Route path="/FAQ" component={FAQMain} />
+          <Route path="/OurHistory" component={OurHistoryMain} />
+          <Route path="/UsefulLinks" component={UsefulLinksMain} />
+        </Fragment>
       </Router>
     )
   }

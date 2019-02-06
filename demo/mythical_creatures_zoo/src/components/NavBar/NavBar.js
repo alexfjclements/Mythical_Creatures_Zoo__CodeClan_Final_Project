@@ -14,32 +14,32 @@ class NavBar extends Component {
       return (
          <div className="navbar">
 
-            <div className="child">
-               <Link to ="/">
+            <div className="logo">
+               <Link to ="/" className="navlink">
                <Logo/>
                </Link>
             </div>
 
-            <div className="child">
-               <Link to="/Explore">
+            <div className="navchild">
+               <Link to="/Explore" style={{ textDecoration: 'none' }} className="navlink">
                <ExploreButton />
                </Link>
             </div>
 
-            <div className="child">
-               <Link to="/CreatureList">
+            <div className="navchild">
+               <Link to="/CreatureList" style={{ textDecoration: 'none' }} className="navlink">
                CreatureList
                </Link>
             </div>
 
-            <div className="child">
-               <Link to="/Region">
+            <div className="navchild">
+               <Link to="/Region" >
                <RegionsDropDown />
                </Link>
             </div>
 
-            <div className="child">
-               <Link to="/Search">
+            <div className="navchild" >
+               <Link to="/Search" style={{ textDecoration: 'none' }} className="navlink">
                <SearchBox />
                </Link>
             </div >
