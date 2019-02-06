@@ -21,7 +21,7 @@ const CreatureList = ({ creatures = [] }) => {
    });
    return (
      <Fragment>
-      <Link to="/AddCreature" component={AddCreature}>asdf</Link>
+      <Link to="/AddCreature">asdf</Link>
       <ul>
          {listCreatures}
       </ul>

@@ -14,6 +14,7 @@ import CreatureList from '../components/Mains/CreatureList';
 import SearchBox from '../components/NavBar/SearchBox.js';
 import Request from '../helpers/request.js';
 import HomePage from '../components/Mains/HomePage.js';
+import AddCreature from '../components/Mains/AddCreature.js';
 
 
 class ZooContainer extends Component {
@@ -56,6 +57,7 @@ class ZooContainer extends Component {
       <br></br>
       <Footer />
       <Route path="/FAQ" component={FAQMain} />
+      <Route path="/AddCreature" component={AddCreature} />
       <Route path="/OurHistory" component={OurHistoryMain} />
       <Route path="/UsefulLinks" component={UsefulLinksMain} />
       </Fragment>
