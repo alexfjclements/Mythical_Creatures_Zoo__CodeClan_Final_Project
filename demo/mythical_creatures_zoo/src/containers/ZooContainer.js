@@ -20,18 +20,21 @@ class ZooContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      creaturesArray: [],
       enclosureArray: []
     };
   }
 
   componentDidMount(){
     let request = new Request();
-    const data = request.get('http://localhost:8080/api/mythicalCreatures')
-    console.log(data);
-    this.setState({creaturesArray: data._embedded.mythicalCreatures})
+    request.get('http://localhost:8080/api/mythicalCreatures')
+    .then((data) => {
+      this.setState({creaturesArray: data._embedded.mythicalCreatures})
+    })
   }
 
   render() {
+    return(
       <Router>
       <Fragment>
       <NavBar />
