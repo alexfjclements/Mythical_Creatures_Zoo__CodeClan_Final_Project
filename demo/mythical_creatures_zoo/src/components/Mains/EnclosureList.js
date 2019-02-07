@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddCreature from './AddCreature.js';
 import { Link } from 'react-router-dom';
 
-const CreatureList = ({ creatures = [] }) => {
+const EnclosureList = ({ creatures = [] }) => {
 
    const listCreatures = creatures.map((creature, index) => {
       return (
@@ -55,4 +55,4 @@ const CreatureList = ({ creatures = [] }) => {
 //    );
 // }
 //
-// export default EnclosureList;
+export default EnclosureList;
