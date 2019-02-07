@@ -38,7 +38,7 @@ class ZooContainer extends Component {
          })
    }
 
-  componentDidMount(){
+  componentDidMount() {
     let request = new Request();
     request.get('/api/mythicalCreatures')
     .then((data) => {
@@ -57,7 +57,7 @@ class ZooContainer extends Component {
   }
 
   render() {
-    return(
+    return (
       <Router>
       <Fragment>
       <NavBar />

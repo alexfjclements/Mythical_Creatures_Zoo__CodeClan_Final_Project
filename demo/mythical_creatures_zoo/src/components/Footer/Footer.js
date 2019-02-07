@@ -3,57 +3,32 @@ import SocialMedia from './SocialMedia.js'
 import FAQ from './FAQ.js'
 import OurHistory from './OurHistory.js'
 import UsefulLinks from './UsefulLinks.js'
-import './Footer.css';
 import { Link } from 'react-router-dom';
 
 class Footer extends Component {
    render() {
       return (
-         // <div className="footer">
-         //    <div className="child">
-         //       <SocialMedia />
-         //    </div>
-         //    <div className="child">
-         //       <FAQ />
-         //    </div>
-         //    <div className="child">
-         //       <OurHistory />
-         //    </div>
-         //    <div className="child">
-         //       <UsefulLinks />
-         //    </div>
-         // </div>
-         // <ul>
-         // <li>
-         // <SocialMedia/>
-         // </li>
-         // <li>
-         // <Link to="/OurHistory">Our History</Link>
-         // </li>
-         // <li>
-         // <Link to="/UsefulLinks">Useful Links</Link>
-         // </li>
-         // </ul>
+        
          <div className="footer">
 
-            <div className="child">
-               <SocialMedia />
+            <div className="footerchild">
+                  <SocialMedia />
             </div>
 
-            <div className="child">
-               <Link to="/FAQ">
+            <div className="footerchild">
+               <Link to="/FAQ" style={{ textDecoration: 'none' }} >
                   FAQ
                </Link>
             </div>
 
-            <div className="child">
-               <Link to="/OurHistory">
+            <div className="footerchild">
+               <Link to="/OurHistory" style={{ textDecoration: 'none' }}>
                   Our History
                </Link>
             </div>
 
-            <div className="child">
-               <Link to="/UsefulLinks">
+            <div className="footerchild">
+               <Link to="/UsefulLinks" style={{ textDecoration: 'none' }}>
                   Useful Links
                </Link>
             </div>
@@ -61,8 +36,6 @@ class Footer extends Component {
          </div>
       );
    }
-
-
 }
 
 export default Footer;
