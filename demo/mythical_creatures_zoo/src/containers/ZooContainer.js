@@ -53,12 +53,10 @@ class ZooContainer extends Component {
 
    onRegionSelected(regionToRender) {
       let request = new Request();
-      request.get('/api/mythicalCreatures/location/{regionToRender}')
+      request.get(`/api/mythicalCreatures/location/${regionToRender}`)
          .then((data) => {
-            this.setState({ filteredCreaturesArray: data })
+            this.setState({ filteredCreaturesArray: data });
          })
-         console.log(this.filteredCreaturesArray);
-
    }
 
    render() {
