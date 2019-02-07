@@ -14,11 +14,8 @@ import CreatureList from '../components/Mains/CreatureList';
 import SearchBox from '../components/NavBar/SearchBox.js';
 import Request from '../helpers/request.js';
 import HomePage from '../components/Mains/HomePage.js';
+import AddCreature from '../components/Mains/AddCreature.js';
 import Region from '../components/Mains/Region.js';
-import { Link } from 'react-router-dom';
-import {createBrowserHistory} from 'history';
-
-const history = createBrowserHistory();
 
 
 class ZooContainer extends Component {
@@ -41,38 +38,53 @@ class ZooContainer extends Component {
          })
    }
 
-   onRegionSelected(regionToRender) {
-      const filterCreaturesByRegion = this.state.creaturesArray.filter(creature => creature.originLocation === regionToRender);
-      this.setState({ filteredCreaturesArray: filterCreaturesByRegion});
-   }
+  componentDidMount(){
+    let request = new Request();
+    request.get('/api/mythicalCreatures')
+    .then((data) => {
+      this.setState({creaturesArray: data._embedded.mythicalCreatures})
+    })
 
-   render() {
-      return (
-         <Router>
-            <Fragment>
-               <NavBar />
-               <Route exact path="/" component={HomePage} />
-               <br></br>
-               <br></br>
-               <Main />
-               {/* <Route path="/Explore" component={EnclosureList}/> */}
-               <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
-               />
-               {/* <Route path="/Region" /> */}
-               {/* <Route path="/Region" render={() => <RegionsDropDown onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />} */}
-               <Route path="/Search" component={SearchBox} />
-               <Route path="/CreatureList" render={() => <CreatureList onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />}
-               />
-               <br></br>
-               <br></br>
-               <Footer />
-               <Route path="/FAQ" component={FAQMain} />
-               <Route path="/OurHistory" component={OurHistoryMain} />
-               <Route path="/UsefulLinks" component={UsefulLinksMain} />
-            </Fragment>
-         </Router>
-      )
-   }
+    request.get('/api/enclosures')
+    .then((data) => {
+      this.setState({enclosureArray: data._embedded.enclosures})
+    })
+  }
+
+  onRegionSelected(regionToRender) {
+     const filterCreaturesByRegion = this.state.creaturesArray.filter(creature => creature.originLocation === regionToRender);
+     this.setState({ filteredCreaturesArray: filterCreaturesByRegion});
+  }
+
+  render() {
+    return(
+      <Router>
+      <Fragment>
+      <NavBar />
+      <Route exact path="/" component={HomePage} />
+      <br></br>
+      <br></br>
+      <Main />
+      {/* <Route path="/Explore" component={EnclosureList}/> */}
+      <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
+      />
+      {/* <Route path="/Region" component={RegionsDropDown} /> */}
+      <Route path="/Region" render={() => <RegionsDropDown creatures={this.state.creaturesArray} />}
+      />
+      <Route path="/Search" component={SearchBox} />
+      <Route path="/CreatureList" render={() => <CreatureList onRegionSelected={this.onRegionSelected} creatures={this.state.creaturesArray} />}
+      />
+      <br></br>
+      <br></br>
+      <Footer />
+      <Route path="/FAQ" component={FAQMain} />
+      <Route path="/AddCreature" component={AddCreature} />
+      <Route path="/OurHistory" component={OurHistoryMain} />
+      <Route path="/UsefulLinks" component={UsefulLinksMain} />
+      </Fragment>
+      </Router>
+    )
+  }
 }
 
 export default ZooContainer;

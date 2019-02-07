@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
-import './Main.css';
+import React, {Component} from 'react';
+import CreatureFormContainer from '../../containers/CreatureFormContainer.js';
 
-const CreatureDetail = (creature) => (
 
-   <div className="creature">
-      <p>Name: {creature.name}</p>
-      <p>Breed: {creature.breed}</p>
-      <p>Description: {creature.description}</p>
-   </div>
-)
+const AddCreature = () => {
 
-export default CreatureDetail;
+    return (
+      <>
+        <CreatureFormContainer />
+      </>
+    )
+
+
+ }
+
+export default AddCreature;

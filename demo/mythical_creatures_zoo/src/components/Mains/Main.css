@@ -47,15 +47,15 @@
    align-content: space-around;
    height: 100%;
  }
- 
+
  .creature {
- 
+
    width: 30%;
    height: 100%;
    text-align: left;
    background-color: white;
    width: 330px;
- 
+
    margin: 10px;
  }
 
@@ -63,4 +63,5 @@
    text-align: center;
    font-size: 80px;
  }
+
  

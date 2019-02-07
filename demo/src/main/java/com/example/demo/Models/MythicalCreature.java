@@ -17,7 +17,7 @@ public class MythicalCreature {
     private String name;
 
     @Column(name = "gender")
-    private Gender gender;
+    private String gender;
 
     @Column(name = "killBehaviour")
     private String killBehaviourString;
@@ -36,7 +36,7 @@ public class MythicalCreature {
     @Column(name = "breed")
     private String breed;
 
-    public MythicalCreature(String name, Gender gender, String killBehaviourString, String originLocation, String description, String breed) {
+    public MythicalCreature(String name, String gender, String killBehaviourString, String originLocation, String description, String breed) {
         this.name = name;
         this.gender = gender;
         this.killBehaviourString = killBehaviourString;
@@ -64,11 +64,11 @@ public class MythicalCreature {
         this.name = name;
     }
 
-    public Enum getGender() {
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender gender) {
+    public void setGender(String gender) {
         this.gender = gender;
     }
 

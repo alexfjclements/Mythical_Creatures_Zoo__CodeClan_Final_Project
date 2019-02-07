@@ -4,6 +4,7 @@ import './Main.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import AddCreature from './AddCreature.js';
 import RegionsDropDown from '../NavBar/RegionsDropDown.js'
+import { Link } from 'react-router-dom';
 
 const CreatureList = ({onRegionSelected, creatures = [] }) => {
 
@@ -19,14 +20,15 @@ const CreatureList = ({onRegionSelected, creatures = [] }) => {
          </li>
       );
    });
+
    return (
      <Fragment>
-      <Route path="/AddCreature" component={AddCreature}></Route>
+      <Link to="/AddCreature">Add New Creature</Link>
       <RegionsDropDown onRegionSelected={onRegionSelected} creatures={creatures} />
       <ul>
          {listCreatures}
       </ul>
-      </Fragment>
+    </Fragment>
    );
 
 }
