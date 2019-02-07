@@ -3,9 +3,7 @@ import SocialMedia from './SocialMedia.js'
 import FAQ from './FAQ.js'
 import OurHistory from './OurHistory.js'
 import UsefulLinks from './UsefulLinks.js'
-import './Footer.css';
 import { Link } from 'react-router-dom';
-
 
 class Footer extends Component {
    render() {
@@ -14,9 +12,7 @@ class Footer extends Component {
          <div className="footer">
 
             <div className="footerchild">
-               {/* <div className="socialmedia"> */}
                   <SocialMedia />
-               {/* </div> */}
             </div>
 
             <div className="footerchild">
@@ -40,8 +36,6 @@ class Footer extends Component {
          </div>
       );
    }
-
-
 }
 
 export default Footer;

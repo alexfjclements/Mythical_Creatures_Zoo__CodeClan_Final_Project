@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import './NavBar.css';
 
 class SearchBox extends Component {
    render() {
       return (
          <>
-            
-            <form className="form" id="addItemForm">
+            <form className="form" id="searchForm">
                <input
                   type="text"
                   className="input"

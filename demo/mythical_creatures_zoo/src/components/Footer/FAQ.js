@@ -6,7 +6,6 @@ class FAQ extends Component{
          "This is FAQ!"
       )
    }
-
 }
 
 export default FAQ;

@@ -3,7 +3,6 @@ import Logo from './Logo.js';
 import ExploreButton from './ExploreButton.js'
 import RegionsDropDown from './RegionsDropDown.js'
 import SearchBox from './SearchBox.js';
-import './NavBar.css';
 import { Link } from 'react-router-dom';
 import CreatureList from '../Mains/CreatureList.js';
 
@@ -45,8 +44,6 @@ class NavBar extends Component {
             </div >
 
          </div >
-
-
       )
    }
 }

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import CreatureDetail from './CreatureDetail.js';
-import './Main.css';
 
 const CreatureList = ({ creatures = [] }) => {
 
