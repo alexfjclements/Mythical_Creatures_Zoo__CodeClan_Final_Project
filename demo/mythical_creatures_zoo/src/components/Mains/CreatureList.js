@@ -10,14 +10,14 @@ const CreatureList = ({onRegionSelected, creatures = [] }) => {
 
    const listCreatures = creatures.map((creature, index) => {
       return (
-          <li key={index} className="creature_list">
+          <p key={index} className="creature_list">
             <CreatureDetail
                name={creature.name}
                breed={creature.breed}
                description={creature.description}
             >
             </CreatureDetail>
-         </li>
+         </p>
       );
    });
 
@@ -25,7 +25,7 @@ const CreatureList = ({onRegionSelected, creatures = [] }) => {
      <Fragment>
       <Link to="/AddCreature">Add New Creature</Link>
       <RegionsDropDown onRegionSelected={onRegionSelected} creatures={creatures} />
-      <ul>
+      <ul className="list">
          {listCreatures}
       </ul>
     </Fragment>
