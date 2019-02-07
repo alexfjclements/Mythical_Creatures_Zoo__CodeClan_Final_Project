@@ -1,10 +1,14 @@
 import React, {Component} from 'react';
 import './NavBar.css';
+import ouroboros from './ouroboros.png';
 
 class Logo extends Component{
    render(){
       return(
-         "This is the logo!"
+         
+         <>
+         <img src={ouroboros} alt="Logo" style={{width: 100, height: 100}}/>
+         </>
       )
    }
 
