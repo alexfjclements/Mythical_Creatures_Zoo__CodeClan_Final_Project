@@ -122,3 +122,9 @@ ul {
    flex-direction: row;
    height: 100%;
 }
+
+.creaturelistoptions {
+   display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+}

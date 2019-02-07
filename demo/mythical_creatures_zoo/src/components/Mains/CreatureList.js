@@ -22,12 +22,16 @@ const CreatureList = ({onRegionSelected, creatures = [] }) => {
    });
 
    return (
-     <Fragment>
+      <Fragment>
+     <div className="creaturelistoptions">
       <Link to="/AddCreature">Add New Creature</Link>
+      <br></br>
       <RegionsDropDown onRegionSelected={onRegionSelected} creatures={creatures} />
+      </div>
       <ul className="list">
          {listCreatures}
       </ul>
+    
     </Fragment>
    );
 
