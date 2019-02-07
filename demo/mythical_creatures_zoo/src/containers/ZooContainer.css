@@ -3,7 +3,10 @@
    flex-wrap: wrap;
    align-content: center;
    height: 100%;
-   background-color: lightblue;
+}
+
+body {
+   background-color: lavender;
 }
 
 .navbar {
@@ -91,13 +94,6 @@ p {
    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-/* .list {
-   display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
-  height: 100%;
-} */
-
 ul {
    display: flex;
    flex-wrap: wrap;
@@ -115,6 +111,14 @@ ul {
    border-radius: 10px;
 }
 
-/* add-creature-form {
-   
-} */
+.add-creature-form {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+
+.gender_input {
+   display: flex;
+   flex-direction: row;
+   height: 100%;
+}
