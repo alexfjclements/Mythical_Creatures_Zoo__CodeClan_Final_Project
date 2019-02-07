@@ -10,7 +10,7 @@ const NavBar = ({ onRegionSelected, creatures = [] }) => {
    return (
       <div className="navbar">
 
-         <div className="child">
+         <div className="navchild">
             <Link to="/">
                <Logo />
             </Link>
