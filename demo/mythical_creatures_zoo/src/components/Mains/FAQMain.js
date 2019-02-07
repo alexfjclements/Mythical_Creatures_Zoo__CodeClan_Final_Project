@@ -1,12 +1,17 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class FAQMain extends Component {
-   render(){
-      return(
-         <>
-         "Q1: When is too early for whisky?"
-         "A: Never"
-         </>
+   render() {
+      return (
+         <div className="container">
+            <div className="faq">
+               <p>"Why did you choose Mythological Creatures?"</p>
+               <p>"Because we'd done Dinosaurs to extinction."</p>
+               <br></br>
+               <p>"What's the toughest creature in your zoo?"</p>
+               <p>"The Soup Dragon"</p>
+            </div>
+         </div>
       )
    }
 }

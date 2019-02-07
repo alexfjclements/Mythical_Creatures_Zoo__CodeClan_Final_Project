@@ -58,7 +58,7 @@ class ZooContainer extends Component {
             this.setState({ filteredCreaturesArray: data })
          })
          console.log(this.filteredCreaturesArray);
-         
+
    }
 
    render() {
