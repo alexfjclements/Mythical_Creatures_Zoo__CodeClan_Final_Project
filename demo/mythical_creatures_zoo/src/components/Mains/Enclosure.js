@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import CreatureDetail from './CreatureDetail.js';
+import EnclosureList from './EnclosureList.js';
 
-const Enclosure = ({ enclosures = [] }) => {
-
-   const listCreaturesInEnclosure = enclosures.map((creature, index) => {
+const Enclosure = (enclosure) => {
+    console.log(enclosure);
+   const listCreaturesInEnclosure = enclosure.map((creature, index) => {
       return (
          <li key={index} className="creature_list">
             <CreatureDetail
@@ -16,9 +17,9 @@ const Enclosure = ({ enclosures = [] }) => {
       );
    });
 
-   const presentEnclosure = (enclosures) => (
+   const presentEnclosure = (enclosure) => (
       <>
-         <h4>Enclosure Number: {enclosures[0].enclosure}</h4>
+         <h4>Enclosure Number: {enclosure[0].enclosure}</h4>
          {listCreaturesInEnclosure}
       </>
    );
@@ -26,7 +27,7 @@ const Enclosure = ({ enclosures = [] }) => {
 
    return (
       <ul>
-         {presentEnclosure(enclosures)}
+         {presentEnclosure(enclosure)}
       </ul>
    );
 }

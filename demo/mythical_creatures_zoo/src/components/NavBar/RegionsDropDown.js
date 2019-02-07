@@ -1,13 +1,4 @@
 import React, { Component } from 'react';
-import './NavBar.css';
-
-// class RegionsDropDown extends Component{
-//    render(){
-//       return(
-//          "This is the Regions DropDown!"
-//       )
-//    }
-// }
 
 const RegionsDropDown = (props, { creatures = [] }) => {
   const options = creatures.map((creature, index) => {
