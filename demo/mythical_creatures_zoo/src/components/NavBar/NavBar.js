@@ -16,31 +16,26 @@ const NavBar = ({ onRegionSelected, creatures = [] }) => {
             </Link>
          </div>
 
-            <div className="logo">
-               <Link to ="/" className="navlink">
-               <Logo/>
-               </Link>
-            </div>
-
-            <div className="navchild">
-               <Link to="/Explore" style={{ textDecoration: 'none' }} className="navlink">
+         <div className="navchild">
+            <Link to="/Explore" style={{ textDecoration: 'none' }} className="navlink">
                <ExploreButton />
             </Link>
          </div>
 
-            <div className="navchild">
-               <Link to="/CreatureList" style={{ textDecoration: 'none' }} className="navlink">
+         <div className="navchild">
+            <Link to="/CreatureList" style={{ textDecoration: 'none' }} className="navlink">
                CreatureList
                </Link>
-            </div>
+         </div>
 
-            <div className="navchild" >
-               <Link to="/Search" style={{ textDecoration: 'none' }} className="navlink">
+         <div className="navchild" >
+            <Link to="/Search" style={{ textDecoration: 'none' }} className="navlink">
                <SearchBox />
             </Link>
          </div >
-      )
-   }
+      </div>
+   )
 }
+
 
 export default NavBar;

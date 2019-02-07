@@ -64,7 +64,7 @@ class ZooContainer extends Component {
       <Route exact path="/" component={HomePage} />
       <br></br>
       <br></br>
-      <Main />
+      {/* <Main /> */}
       {/* <Route path="/Explore" component={EnclosureList}/> */}
       <Route path="/Explore" render={() => <EnclosureList creaturesByEnclosure={this.state.enclosureArray} />}
       />
